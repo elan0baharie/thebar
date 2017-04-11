@@ -78,6 +78,20 @@ $(document).ready(function() {
     var spirVl = $("#brbnBtn").val();
     $("#firstSpot").val(spirVl);
   });
+  $("#ginBtn").click(function(event){
+    event.preventDefault();
+    $("#firstSpot").val("");
+    var spirVl = $("#ginBtn").val();
+    console.log(spirVl);
+    $("#firstSpot").val(spirVl);
+  });
+  $("#teqBtn").click(function(event){
+    event.preventDefault();
+    $("#firstSpot").val("");
+    var spirVl = $("#teqBtn").val();
+    console.log(spirVl);
+    $("#firstSpot").val(spirVl);
+  });
 
   $("#swtVrBtn").click(function(event){
     event.preventDefault();
@@ -87,10 +101,39 @@ $(document).ready(function() {
     $("#secondSpot").val(mxVl);
   });
 
+  $("#trpSecBtn").click(function(event){
+    event.preventDefault();
+    $("#secondSpot").val("");
+    var mxVl = $("#trpSecBtn").val();
+    console.log(mxVl);
+    $("#secondSpot").val(mxVl);
+  });
+  $("#dryVrBtn").click(function(event){
+    event.preventDefault();
+    $("#secondSpot").val("");
+    var mxVl = $("#dryVrBtn").val();
+    console.log(mxVl);
+    $("#secondSpot").val(mxVl);
+  });
+
   $("#chryBtn").click(function(event){
     event.preventDefault();
     $("#thirdSpot").val("");
     var altVl = $("#chryBtn").val();
+    console.log(altVl);
+    $("#thirdSpot").val(altVl);
+  });
+  $("#limeJuiceBtn").click(function(event){
+    event.preventDefault();
+    $("#thirdSpot").val("");
+    var altVl = $("#limeJuiceBtn").val();
+    console.log(altVl);
+    $("#thirdSpot").val(altVl);
+  });
+  $("#twistBtn").click(function(event){
+    event.preventDefault();
+    $("#thirdSpot").val("");
+    var altVl = $("#twistBtn").val();
     console.log(altVl);
     $("#thirdSpot").val(altVl);
   });
@@ -103,6 +146,20 @@ $(document).ready(function() {
     $("#thirdSpot").val(rdWnVl);
   });
 
+  $("#chardBtn").click(function(event){
+    event.preventDefault();
+    $("#thirdSpot").val("");
+    var rdWnVl = $("#chardBtn").val();
+    console.log(rdWnVl);
+    $("#thirdSpot").val(rdWnVl);
+  });
+  $("#beerBtn").click(function(event){
+    event.preventDefault();
+    $("#thirdSpot").val("");
+    var rdWnVl = $("#beerBtn").val();
+    console.log(rdWnVl);
+    $("#thirdSpot").val(rdWnVl);
+  });
 //Player info submit
 $(".playerForm").submit(function(event) {
   event.preventDefault();
