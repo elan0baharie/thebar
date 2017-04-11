@@ -64,6 +64,23 @@ body {
   width: 100%;
   border-radius: 3px;
 }
+#teqBtn {
+  border: 3px solid #996600;
+  background-image: url("../img/teq.png");
+  background-size: cover;
+  height: 65px;
+  width: 100%;
+  border-radius: 3px;
+}
+
+#swtVrBtn {
+  border: 3px solid #996600;
+  background-image: url("../img/swtV.jpg");
+  background-size: cover;
+  height: 65px;
+  width: 100%;
+  border-radius: 3px;
+}
 #trpSecBtn {
   border: 3px solid #996600;
   background-image: url("../img/trp.png");
@@ -72,9 +89,9 @@ body {
   width: 100%;
   border-radius: 3px;
 }
-#swtVrBtn {
+#dryVrBtn {
   border: 3px solid #996600;
-  background-image: url("../img/swtV.jpg");
+  background-image: url("../img/dry.jpg");
   background-size: cover;
   height: 65px;
   width: 100%;
@@ -89,11 +106,42 @@ body {
   width: 100%;
   border-radius: 3px;
 }
-
+#limeJuiceBtn {
+  border: 3px solid #996600;
+  background-image: url("../img/limejuice.jpg");
+  background-size: cover;
+  height: 65px;
+  width: 100%;
+  border-radius: 3px;
+}
+#twistBtn {
+  border: 3px solid #996600;
+  background-image: url("../img/twist.jpg");
+  background-size: cover;
+  height: 65px;
+  width: 100%;
+  border-radius: 3px;
+}
 
 #pNBtn {
   border: 3px solid #996600;
   background-image: url("../img/pN.jpg");
+  background-size: cover;
+  height: 65px;
+  width: 100%;
+  border-radius: 3px;
+}
+#chardBtn {
+  border: 3px solid #996600;
+  background-image: url("../img/chard.jpg");
+  background-size: cover;
+  height: 65px;
+  width: 100%;
+  border-radius: 3px;
+}
+#beerBtn {
+  border: 3px solid #996600;
+  background-image: url("../img/beer.png");
   background-size: cover;
   height: 65px;
   width: 100%;
