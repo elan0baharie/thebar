@@ -56,10 +56,13 @@ $(document).ready(function() {
     $("#thirdSpot").val(rdWnVl);
   });
 
-
-
-
-
+//Player info submit
+$(".playerForm").submit(function(event) {
+  event.preventDefault();
+  $("#header1").hide();
+  $(".playerInput").hide();
+  $(".header2").show();
+});
 //Submit Button
   $("#trns-form").submit(function(event) {
     event.preventDefault();
