@@ -226,17 +226,19 @@ $(document).ready(function() {
     $("#thirdSpot").val(altVl);
   });
 //Player info submit
-// $(".playerForm").submit(function(event) {
-//   event.preventDefault();
-//   $("#header1").hide();
-//   $(".playerInput").hide();
-//   $(".header2").show();
-//   var avatarInput = $("input:radio[name=thisradio]:checked").val();
-//   var playerNameInput = $("#playerNameInput").val();
-//   $(".playerName").text(playerNameInput);
-//   $("." + avatarInput).show();
-//   console.log(avatarInput);
-// });
+
+$(".playerForm").click(function(event) {
+  event.preventDefault();
+  $("#header1").hide();
+  $(".playerInput").hide();
+  $(".header2").show();
+  var avatarInput = $("input:radio[name=thisradio]:checked").val();
+  var playerNameInput = $("#playerNameInput").val();
+  $(".playerName").text(playerNameInput);
+  $("." + avatarInput).show();
+  console.log(avatarInput);
+});
+
 //Submit Button
   $("#trns-form").submit(function(event) {
     event.preventDefault();
