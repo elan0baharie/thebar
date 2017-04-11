@@ -40,6 +40,10 @@ body {
   border-radius: 9px;
 }
 
+.br-bd-rght {
+  float: right;
+}
+
 
 #brbnBtn {
   border: 3px solid #996600;
