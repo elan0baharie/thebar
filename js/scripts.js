@@ -19,7 +19,7 @@ var Game = function (req, spot1, spot2, spot3) {
 };
 
 Game.prototype.reqLib = function () {
-  this.req= "Moscow Mule";
+  this.req = "Pinot Noir";
 
   if(this.req === "Manhattan") {
 
@@ -47,10 +47,19 @@ Game.prototype.reqLib = function () {
     console.log("Victory Condition");
       this.bank + 10;
       return;
-    }//End of Moscow Test
-    else if (this.req=== ""){
-    return false;
+  }//End of Moscow Test
+  else if (this.req=== "Pinot Noir") {
+    if(this.spot3 !== "Pinot Noir") {
+      console.log("This is not what I had in mind");
+    } else if(this.spot1 !== "" && this.spot2 !== "" && this.spot3 === "Pinot Noir") {
+      console.log("I just want the wine by itself. How do you mess this up?");
+    } else if(this.spot1 === "" && this.spot2 === "" && this.spot3 === "Pinot Noir") {
+      console.log("This is perfect");
+      console.log("Victory Condition");
+        this.bank + 10;
+        return;
     }
+  } else if () {}
   }
 
 
