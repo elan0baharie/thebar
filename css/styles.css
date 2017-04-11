@@ -1,0 +1,8 @@
+.playerForm img {
+  border: 1px solid black;
+  height: 200px;
+  width: auto;
+}
+.header2 {
+    display: none;
+}
