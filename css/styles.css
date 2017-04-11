@@ -16,11 +16,16 @@
   width: auto;
 }
 .back {
-  background-image: url("../img/back.jpg");
+  background-image: url("../img/back2.jpg");
+  background-size: cover;
 }
 .orderStatement {
   background-color: white;
   float: right;
+}
+.bottombar {
+  margin-bottom: -20px;
+  width: 90%;
 }
 input[type="radio"] {
   display: none;
@@ -47,12 +52,16 @@ body {
   background-image: url("../img/barpad-bg.jpg");
   border-radius: 9px;
 }
-
+.bar-pad-bg button {
+  margin: 4px 4px;
+}
 .br-bd-rght {
   float: right;
 }
 .textOpt {
   background-color: white;
+  border: 2px solid black;
+  border-radius: 3px;
 }
 
 #brbnBtn {
