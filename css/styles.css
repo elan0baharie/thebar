@@ -6,11 +6,19 @@
 .header2 {
     display: none;
 }
+.avatarDisplay {
+  float: right;
+}
 .avatarDisplay img {
   display: none;
   height: 200px;
   width: auto;
-  float: right;
+}
+input[type="radio"] {
+  display: none;
+}
+input[type="radio"]:checked {
+  border: 4px solid red;
 }
 body {
   margin: 0;
@@ -26,8 +34,8 @@ body {
 
 .bar-pad-bg {
   border: 8px ridge #996600;
-  height: 500px;
-  width: 400px;
+  /*height: 500px;
+  width: 400px;*/
   background-image: url("../img/barpad-bg.jpg");
   border-radius: 9px;
 }
