@@ -120,7 +120,22 @@ $(document).ready(function() {
     console.log(spirVl);
     $("#firstSpot").val(spirVl);
   });
+  $("#vodBtn").click(function(event){
+    event.preventDefault();
+    $("#firstSpot").val("");
+    var spirVl = $("#vodBtn").val();
+    console.log(spirVl);
+    $("#firstSpot").val(spirVl);
+  });
+  $("#rumBtn").click(function(event){
+    event.preventDefault();
+    $("#firstSpot").val("");
+    var spirVl = $("#rumBtn").val();
+    console.log(spirVl);
+    $("#firstSpot").val(spirVl);
+  });
 
+// below is column 2 mixers
   $("#swtVrBtn").click(function(event){
     event.preventDefault();
     $("#secondSpot").val("");
@@ -143,7 +158,14 @@ $(document).ready(function() {
     console.log(mxVl);
     $("#secondSpot").val(mxVl);
   });
-
+  $("#gingBtn").click(function(event){
+    event.preventDefault();
+    $("#secondSpot").val("");
+    var mxVl = $("#gingBtn").val();
+    console.log(mxVl);
+    $("#secondSpot").val(mxVl);
+  });
+// below is column 3 and 4
   $("#chryBtn").click(function(event){
     event.preventDefault();
     $("#thirdSpot").val("");
@@ -165,6 +187,14 @@ $(document).ready(function() {
     console.log(altVl);
     $("#thirdSpot").val(altVl);
   });
+  $("#tonicBtn").click(function(event){
+    event.preventDefault();
+    $("#thirdSpot").val("");
+    var altVl = $("#tonicBtn").val();
+    console.log(altVl);
+    $("#thirdSpot").val(altVl);
+  });
+
 
   $("#pNBtn").click(function(event){
     event.preventDefault();
@@ -188,18 +218,27 @@ $(document).ready(function() {
     console.log(rdWnVl);
     $("#thirdSpot").val(rdWnVl);
   });
+  $("#sodaBtn").click(function(event){
+    event.preventDefault();
+    $("#thirdSpot").val("");
+    var altVl = $("#sodaBtn").val();
+    console.log(altVl);
+    $("#thirdSpot").val(altVl);
+  });
 //Player info submit
-// $(".playerForm").submit(function(event) {
-//   event.preventDefault();
-//   $("#header1").hide();
-//   $(".playerInput").hide();
-//   $(".header2").show();
-//   var avatarInput = $("input:radio[name=thisradio]:checked").val();
-//   var playerNameInput = $("#playerNameInput").val();
-//   $(".playerName").text(playerNameInput);
-//   $("." + avatarInput).show();
-//   console.log(avatarInput);
-// });
+
+$("#playerInfoForm").submit(function(event) {
+  event.preventDefault();
+  $("#header1").hide();
+  $(".playerInput").hide();
+  $(".header2").show();
+  var avatarInput = $("input:radio[name=thisradio]:checked").val();
+  var playerNameInput = $("#playerNameInput").val();
+  $(".playerName").text(playerNameInput);
+  $("." + avatarInput).show();
+  console.log(avatarInput);
+});
+
 //Submit Button
   $("#trns-form").submit(function(event) {
     event.preventDefault();
