@@ -18,8 +18,8 @@ var Game = function (req, spot1, spot2, spot3) {
   return;
 };
 
+
 Game.prototype.reqLib = function () {
-  this.req = "Gin Martini";
   if(this.req === "Manhattan") {
 
     if(this.spot1 !== "Bourbon" || this.spot2 !== "Sweet Vermouth" || this.spot3 !== "Cherry") {
