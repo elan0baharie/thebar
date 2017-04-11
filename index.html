@@ -25,52 +25,61 @@
       <div class="playerInput">
         <form class="playerForm">
           <label for="">Please tell us your name</label>
-          <input type="text" name="" value="">
+          <input type="text" id="playerNameInput">
           <p>Please choose your avatar</p>
-          <img src="img/legotender.png" alt="">
+          <span style=><input type="radio" name="thisradio" value="avatarA" id="avatarA" checked></span><img id="imageAvatarA" src="img/legotender.png" alt=""style="cursor:pointer;">
+          <span style=><input type="radio" name="thisradio" value="avatarB" id="avatarB"></span><img id="imageAvatarB" src="img/legotender2.png" alt=""style="cursor:pointer;">
+          <span style=><input type="radio" name="thisradio" value="avatarC" id="avatarC"></span><img id="imageAvatarC" src="img/legotender3.png" alt=""style="cursor:pointer;">
+          <span style=><input type="radio" name="thisradio" value="avatarD" id="avatarD"></span><img id="imageAvatarD" src="img/legotender4.png" alt=""style="cursor:pointer;">
+          <!-- <img src="img/legotender.png" alt="">
           <img src="img/legotender2.png" alt="">
           <img src="img/legotender3.png" alt="">
-          <img src="img/legotender4.png" alt="">
+          <img src="img/legotender4.png" alt=""> -->
           <button type="submit" class="playerInfo">Submit</button>
         </form>
       </div>
 <!--Have a menu div here? Need to figure slow switch-->
 
 <!--this area will become the main bar playing field, will show after player info is gathered-->
-      <div class="mainBar">
+      <div class="row">
+        <!--playing field-->
+        <div class="col-sm-6 container-fluid">
+          <form id="trns-form">
+                <div class="row bar-pad-bg">
 
-      </div>
-
-    </div>
-
-    <div class="container-fluid">
-      <form id="trns-form">
-            <div class="row bar-pad-bg">
-
-                <div class="form-group">
-                  <div>
-                    <button class="btn btn-default" id="brbnBtn" type="button" value="Bourbon">Bourbon</button>
+                    <div class="form-group">
+                      <div>
+                        <button class="btn btn-default" id="brbnBtn" type="button" value="Bourbon">Bourbon</button>
+                      </div>
+                      <div>
+                        <button class="btn btn-default" id="swtVrBtn" type="button" value="Sweet Vermouth">Sweet Vermouth</button>
+                      </div>
                   </div>
-                  <div>
-                    <button class="btn btn-default" id="swtVrBtn" type="button" value="Sweet Vermouth">Sweet Vermouth</button>
+
+                  <div class="form-group">
+                    <div id="cherry">
+                      <button class="btn btn-default" id="chryBtn" type="button" value="Cherry">Cherry</button>
+                    </div>
+                    <div>
+                      <button class="btn btn-default" id="pNBtn" type="button" value="Pinot Noir">Pinot Noir</button>
+                    </div>
                   </div>
-              </div>
-
-              <div class="form-group">
-                <div id="cherry">
-                  <button class="btn btn-default" id="chryBtn" type="button" value="Cherry">Cherry</button>
+                  <input class="form-control col-sm-4" id="firstSpot" type="text" placeholder="Spirit Goes Here... Yumm">
+                  <input class="form-control col-sm-4" id="secondSpot" type="text" placeholder="Mix Goes Here">
+                  <input class="form-control col-sm-4" id="thirdSpot" type="text" placeholder="Catchall/ Flavor/ Garnish">
+                  <button class="btn btn-default" id="submitBtn" type="submit">Submit</button>
                 </div>
-                <div>
-                  <button class="btn btn-default" id="pNBtn" type="button" value="Pinot Noir">Pinot Noir</button>
-                </div>
-              </div>
-              <input class="form-control col-sm-4" id="firstSpot" type="text" placeholder="Spirit Goes Here... Yumm">
-              <input class="form-control col-sm-4" id="secondSpot" type="text" placeholder="Mix Goes Here">
-              <input class="form-control col-sm-4" id="thirdSpot" type="text" placeholder="Catchall/ Flavor/ Garnish">
-              <button class="btn btn-default" id="submitBtn" type="submit">Submit</button>
-            </div>
-
-      </form>
+          </form>
+        </div>
+        <!--Player field-->
+        <div class="col-sm-6 avatarDisplay">
+          <h2 class="playerName"></h2>
+          <img class="avatarA" src="img/legotender.png" alt="">
+          <img class="avatarB" src="img/legotender2.png" alt="">
+          <img class="avatarC" src="img/legotender3.png" alt="">
+          <img class="avatarD" src="img/legotender4.png" alt="">
+        </div>
+      </div><!--Row Div-->
 
     </div><!--Container Div-->
 

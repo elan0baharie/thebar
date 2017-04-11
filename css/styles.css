@@ -6,7 +6,12 @@
 .header2 {
     display: none;
 }
-
+.avatarDisplay img {
+  display: none;
+  height: 200px;
+  width: auto;
+  float: right;
+}
 body {
   margin: 0;
   width: 100%;
