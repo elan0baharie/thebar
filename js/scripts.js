@@ -3,6 +3,9 @@
 var Game = function (req, spot1, spot2, spot3) {
   this.plyrNm = "";
   this.req = "";
+  this.ingredientOne= "";
+  this.ingredientTwo= "";
+  this.ingredientThree= "";
   this.spot1 = "";
   this.spot2 = "";
   this.spot3 = "";
@@ -11,15 +14,22 @@ var Game = function (req, spot1, spot2, spot3) {
 
 
 
-
-
-  // document.getElementById("trns-form").reset();
-
-  return;
 };
+var Customer = function ( ){
+  var requestArray=["Manhattan","Margarita","Moscow Mule","Gin Martini","Pinot Noir","Chardonnay"];
+  this.randomIndex = function(){
+  return Math.round((Math.random() * 5));
+  };
+  this.createReq = function () {
+    return requestArray[this.randomIndex()];
+  };
+
+}
+
 
 
 Game.prototype.reqLib = function () {
+
   if(this.req === "Manhattan") {
 
     if(this.spot1 !== "Bourbon" || this.spot2 !== "Sweet Vermouth" || this.spot3 !== "Cherry") {
@@ -97,7 +107,7 @@ Game.prototype.reqLib = function () {
 
 $(document).ready(function() {
   var newGame = new Game();
-
+  var newCustomer = new Customer();
 //Spirit Buttons
 
   $("#brbnBtn").click(function(event){
@@ -250,7 +260,9 @@ $("#playerInfoForm").submit(function(event) {
     newGame.spot1 = reqTest1;
     newGame.spot2 = reqTest2;
     newGame.spot3 = reqTest3;
-    newGame.reqLib();
+    // newGame.reqLib();
+    var test = newCustomer.createReq();
+    console.log(test);
 
   });
 
