@@ -47,6 +47,7 @@ Game.prototype.reqLib = function () {
     console.log("Victory Condition");
       this.bank + 10;
       return;
+    }
   }//End of Moscow Test
   else if (this.req=== "Pinot Noir") {
     if(this.spot3 !== "Pinot Noir") {
@@ -59,8 +60,11 @@ Game.prototype.reqLib = function () {
         this.bank + 10;
         return;
     }
-  } else if () {}
   }
+  else if (this.bank === 0) {
+    return;
+  }
+
 
 
 }//End of Request Library Test Function
