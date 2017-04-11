@@ -72,7 +72,23 @@ body {
   width: 100%;
   border-radius: 3px;
 }
-
+#vodBtn {
+  border: 3px solid #996600;
+  background-image: url("../img/vod.png");
+  background-size: cover;
+  height: 65px;
+  width: 100%;
+  border-radius: 3px;
+}
+#rumBtn {
+  border: 3px solid #996600;
+  background-image: url("../img/rum.jpg");
+  background-size: cover;
+  height: 65px;
+  width: 100%;
+  border-radius: 3px;
+}
+/*below is column 2*/
 #swtVrBtn {
   border: 3px solid #996600;
   background-image: url("../img/swtV.jpg");
@@ -97,7 +113,15 @@ body {
   width: 100%;
   border-radius: 3px;
 }
-
+#gingBtn {
+  border: 3px solid #996600;
+  background-image: url("../img/ging.jpg");
+  background-size: cover;
+  height: 65px;
+  width: 100%;
+  border-radius: 3px;
+}
+/*below is column 3 and 4*/
 #chryBtn {
   border: 3px solid #996600;
   background-image: url("../img/chry.jpg");
@@ -122,6 +146,15 @@ body {
   width: 100%;
   border-radius: 3px;
 }
+#tonicBtn {
+  border: 3px solid #996600;
+  background-image: url("../img/tonic.jpg");
+  background-size: cover;
+  height: 65px;
+  width: 100%;
+  border-radius: 3px;
+}
+
 
 #pNBtn {
   border: 3px solid #996600;
@@ -131,6 +164,7 @@ body {
   width: 100%;
   border-radius: 3px;
 }
+
 #chardBtn {
   border: 3px solid #996600;
   background-image: url("../img/chard.jpg");
@@ -142,6 +176,14 @@ body {
 #beerBtn {
   border: 3px solid #996600;
   background-image: url("../img/beer.png");
+  background-size: cover;
+  height: 65px;
+  width: 100%;
+  border-radius: 3px;
+}
+#sodaBtn {
+  border: 3px solid #996600;
+  background-image: url("../img/soda.jpeg");
   background-size: cover;
   height: 65px;
   width: 100%;
