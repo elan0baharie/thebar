@@ -227,7 +227,7 @@ $(document).ready(function() {
   });
 //Player info submit
 
-$(".playerForm").click(function(event) {
+$("#playerInfoForm").submit(function(event) {
   event.preventDefault();
   $("#header1").hide();
   $(".playerInput").hide();
