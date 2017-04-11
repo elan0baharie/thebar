@@ -57,6 +57,14 @@ $(document).ready(function() {
     $("#secondSpot").val(mxVl);
   });
 
+  $("#trpSecBtn").click(function(event){
+    event.preventDefault();
+    $("#secondSpot").val("");
+    var mxVl = $("#trpSecBtn").val();
+    console.log(mxVl);
+    $("#secondSpot").val(mxVl);
+  });
+
   $("#chryBtn").click(function(event){
     event.preventDefault();
     $("#thirdSpot").val("");

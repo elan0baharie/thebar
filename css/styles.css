@@ -8,6 +8,7 @@
 }
 .avatarDisplay {
   float: right;
+  text-align: center;
 }
 .avatarDisplay img {
   display: none;
@@ -43,23 +44,40 @@ body {
 .br-bd-rght {
   float: right;
 }
-
+.textOpt {
+  background-color: white;
+}
 
 #brbnBtn {
   border: 3px solid #996600;
   background-image: url("../img/brbn.jpg");
   background-size: cover;
   height: 65px;
-  width: 40%;
+  width: 100%;
   border-radius: 3px;
 }
-
+#ginBtn {
+  border: 3px solid #996600;
+  background-image: url("../img/gin.jpeg");
+  background-size: cover;
+  height: 65px;
+  width: 100%;
+  border-radius: 3px;
+}
+#trpSecBtn {
+  border: 3px solid #996600;
+  background-image: url("../img/trp.png");
+  background-size: cover;
+  height: 65px;
+  width: 100%;
+  border-radius: 3px;
+}
 #swtVrBtn {
   border: 3px solid #996600;
   background-image: url("../img/swtV.jpg");
   background-size: cover;
   height: 65px;
-  width: 40%;
+  width: 100%;
   border-radius: 3px;
 }
 
@@ -68,7 +86,7 @@ body {
   background-image: url("../img/chry.jpg");
   background-size: cover;
   height: 65px;
-  width: 40%;
+  width: 100%;
   border-radius: 3px;
 }
 
@@ -78,6 +96,6 @@ body {
   background-image: url("../img/pN.jpg");
   background-size: cover;
   height: 65px;
-  width: 40%;
+  width: 100%;
   border-radius: 3px;
 }
