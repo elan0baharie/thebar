@@ -202,7 +202,7 @@ $(document).ready(function() {
     $("#thirdSpot").val(altVl);
   });
 //Player info submit
-$(".playerForm").submit(function(event) {
+$(".playerForm").click(function(event) {
   event.preventDefault();
   $("#header1").hide();
   $(".playerInput").hide();
@@ -221,9 +221,9 @@ $(".playerForm").submit(function(event) {
     var reqTest2 = $("#secondSpot").val();
     var reqTest3 = $("#thirdSpot").val();
 
-    // newGame.spot1 = reqTest1;
-    // newGame.spot2 = reqTest2;
-    // newGame.spot3 = reqTest3;
+    newGame.spot1 = reqTest1;
+    newGame.spot2 = reqTest2;
+    newGame.spot3 = reqTest3;
     newGame.reqLib();
     console.log(newGame.req);
   });
