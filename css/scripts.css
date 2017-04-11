@@ -1,0 +1,57 @@
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bar-pad-bg {
+  border: 8px ridge #996600;
+  height: 500px;
+  width: 400px;
+  background-image: url("../img/barpad-bg.jpg");
+  border-radius: 9px;
+}
+
+
+#brbnBtn {
+  border: 3px solid #996600;
+  background-image: url("../img/brbn.jpg");
+  background-size: cover;
+  height: 65px;
+  width: 40%;
+  border-radius: 3px;
+}
+
+#swtVrBtn {
+  border: 3px solid #996600;
+  background-image: url("../img/swtV.jpg");
+  background-size: cover;
+  height: 65px;
+  width: 40%;
+  border-radius: 3px;
+}
+
+#chryBtn {
+  border: 3px solid #996600;
+  background-image: url("../img/chry.jpg");
+  background-size: cover;
+  height: 65px;
+  width: 40%;
+  border-radius: 3px;
+}
+
+
+#pNBtn {
+  border: 3px solid #996600;
+  background-image: url("../img/pN.jpg");
+  background-size: cover;
+  height: 65px;
+  width: 40%;
+  border-radius: 3px;
+}
