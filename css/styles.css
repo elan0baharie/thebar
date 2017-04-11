@@ -15,6 +15,13 @@
   height: 200px;
   width: auto;
 }
+.back {
+  background-image: url("../img/back.jpg");
+}
+.orderStatement {
+  background-color: white;
+  float: right;
+}
 input[type="radio"] {
   display: none;
 }
