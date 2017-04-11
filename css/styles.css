@@ -27,6 +27,16 @@
   margin-bottom: -20px;
   width: 90%;
 }
+.customerPic {
+  height: 250px;
+  width: auto;
+}
+.back button {
+  float: right;
+  clear: both;
+  margin-top: 25px;
+  width: 300px;
+}
 input[type="radio"] {
   display: none;
 }
