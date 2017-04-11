@@ -62,6 +62,11 @@ $(".playerForm").submit(function(event) {
   $("#header1").hide();
   $(".playerInput").hide();
   $(".header2").show();
+  var avatarInput = $("input:radio[name=thisradio]:checked").val();
+  var playerNameInput = $("#playerNameInput").val();
+  $(".playerName").text(playerNameInput);
+  $("." + avatarInput).show();
+  console.log(avatarInput);
 });
 //Submit Button
   $("#trns-form").submit(function(event) {

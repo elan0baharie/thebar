@@ -25,12 +25,16 @@
       <div class="playerInput">
         <form class="playerForm">
           <label for="">Please tell us your name</label>
-          <input type="text" name="" value="">
+          <input type="text" id="playerNameInput">
           <p>Please choose your avatar</p>
-          <img src="img/legotender.png" alt="">
+          <span style=><input type="radio" name="thisradio" value="avatarA" id="avatarA" checked></span><img id="imageAvatarA" src="img/legotender.png" alt=""style="cursor:pointer;">
+          <span style=><input type="radio" name="thisradio" value="avatarB" id="avatarB"></span><img id="imageAvatarB" src="img/legotender2.png" alt=""style="cursor:pointer;">
+          <span style=><input type="radio" name="thisradio" value="avatarC" id="avatarC"></span><img id="imageAvatarC" src="img/legotender3.png" alt=""style="cursor:pointer;">
+          <span style=><input type="radio" name="thisradio" value="avatarD" id="avatarD"></span><img id="imageAvatarD" src="img/legotender4.png" alt=""style="cursor:pointer;">
+          <!-- <img src="img/legotender.png" alt="">
           <img src="img/legotender2.png" alt="">
           <img src="img/legotender3.png" alt="">
-          <img src="img/legotender4.png" alt="">
+          <img src="img/legotender4.png" alt=""> -->
           <button type="submit" class="playerInfo">Submit</button>
         </form>
       </div>
@@ -45,7 +49,7 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-lg-6 bar-pad-bg">
+        <div class="col-sm-6 bar-pad-bg">
           <form id="trns-form">
             <button class="btn btn-default" id="brbnBtn" type="button" value="Bourbon">Bourbon</button>
             <button class="btn btn-default" id="swtVrBtn" type="button" value="Sweet Vermouth">Sweet Vermouth</button>
@@ -57,7 +61,13 @@
             <button class="btn btn-default" id="submitBtn" type="submit">Submit</button>
           </form>
         </div>
-
+        <div class="col-sm-3 avatarDisplay">
+          <h2 class="playerName"></h2>
+          <img class="avatarA" src="img/legotender.png" alt="">
+          <img class="avatarB" src="img/legotender2.png" alt="">
+          <img class="avatarC" src="img/legotender3.png" alt="">
+          <img class="avatarD" src="img/legotender4.png" alt="">
+        </div>
       </div><!--Row Div-->
     </div><!--Container Div-->
 
