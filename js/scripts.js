@@ -3,9 +3,9 @@
 var Game = function (req, spot1, spot2, spot3) {
   this.plyrNm = "";
   this.req = "";
-  this.spot1 = "Vodka";
-  this.spot2 = "Ginger Beer";
-  this.spot3 = "Lime Juice";
+  this.spot1 = "";
+  this.spot2 = "";
+  this.spot3 = "";
   this.bank = 0;
 
 
@@ -19,8 +19,7 @@ var Game = function (req, spot1, spot2, spot3) {
 };
 
 Game.prototype.reqLib = function () {
-  this.req = "Pinot Noir";
-
+  this.req = "Gin Martini";
   if(this.req === "Manhattan") {
 
     if(this.spot1 !== "Bourbon" || this.spot2 !== "Sweet Vermouth" || this.spot3 !== "Cherry") {
@@ -49,18 +48,43 @@ Game.prototype.reqLib = function () {
       return;
     }
   }//End of Moscow Test
-  else if (this.req=== "Pinot Noir") {
+  else if (this.req === "Gin Martini") {
+    if(this.spot1 !== "Gin" || this.spot2 !== "Dry Vermouth" || this.spot3 !== "Twist") {
+      console.log("Nope");
+      return;
+    } else if (this.spot1 === "Gin" && this.spot2 === "Dry Vermouth" && this.spot3 === "Twist") {
+    console.log("Victory Condition");
+      this.bank + 10;
+      return;
+    }
+
+
+
+  }//End of Gin Martini Test
+  else if (this.req === "Pinot Noir") {
     if(this.spot3 !== "Pinot Noir") {
       console.log("This is not what I had in mind");
-    } else if(this.spot1 !== "" && this.spot2 !== "" && this.spot3 === "Pinot Noir") {
+    } else if(this.spot1 !== "" || this.spot2 !== "" && this.spot3 === "Pinot Noir") {
       console.log("I just want the wine by itself. How do you mess this up?");
     } else if(this.spot1 === "" && this.spot2 === "" && this.spot3 === "Pinot Noir") {
       console.log("This is perfect");
       console.log("Victory Condition");
-        this.bank + 10;
-        return;
+      this.bank + 10;
+      return;
     }
-  }
+  }//End of Pinot Noir Test
+  else if (this.req === "Chardonnay") {
+    if(this.spot3 !== "Chardonnay") {
+      console.log("This is not what I had in mind");
+    } else if(this.spot1 !== "" || this.spot2 !== "" && this.spot3 === "Chardonnay") {
+      console.log("I just want the wine by itself. How do you mess this up?");
+    } else if(this.spot1 === "" && this.spot2 === "" && this.spot3 === "Chardonnay") {
+      console.log("This is perfect");
+      console.log("Victory Condition");
+      this.bank + 10;
+      return;
+    }
+  }//End of Chardonnay Test
   else if (this.bank === 0) {
     return;
   }
@@ -165,17 +189,17 @@ $(document).ready(function() {
     $("#thirdSpot").val(rdWnVl);
   });
 //Player info submit
-$(".playerForm").submit(function(event) {
-  event.preventDefault();
-  $("#header1").hide();
-  $(".playerInput").hide();
-  $(".header2").show();
-  var avatarInput = $("input:radio[name=thisradio]:checked").val();
-  var playerNameInput = $("#playerNameInput").val();
-  $(".playerName").text(playerNameInput);
-  $("." + avatarInput).show();
-  console.log(avatarInput);
-});
+// $(".playerForm").submit(function(event) {
+//   event.preventDefault();
+//   $("#header1").hide();
+//   $(".playerInput").hide();
+//   $(".header2").show();
+//   var avatarInput = $("input:radio[name=thisradio]:checked").val();
+//   var playerNameInput = $("#playerNameInput").val();
+//   $(".playerName").text(playerNameInput);
+//   $("." + avatarInput).show();
+//   console.log(avatarInput);
+// });
 //Submit Button
   $("#trns-form").submit(function(event) {
     event.preventDefault();
@@ -184,11 +208,11 @@ $(".playerForm").submit(function(event) {
     var reqTest2 = $("#secondSpot").val();
     var reqTest3 = $("#thirdSpot").val();
 
-    // newGame.spot1 = reqTest1;
-    // newGame.spot2 = reqTest2;
-    // newGame.spot3 = reqTest3;
+    newGame.spot1 = reqTest1;
+    newGame.spot2 = reqTest2;
+    newGame.spot3 = reqTest3;
     newGame.reqLib();
-    console.log(newGame.req);
+
   });
 
 });// Doc Ready
