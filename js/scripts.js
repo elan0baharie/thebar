@@ -1,10 +1,12 @@
 //U.I.
 
 var Game = function (req, spot1, spot2, spot3) {
+  this.plyrNm = "";
   this.req = "";
-  this.spot1 = "";
-  this.spot2 = "";
-  this.spot3 = "";
+  this.spot1 = "Vodka";
+  this.spot2 = "Ginger Beer";
+  this.spot3 = "Lime Juice";
+  this.bank = 0;
 
 
 
@@ -17,21 +19,41 @@ var Game = function (req, spot1, spot2, spot3) {
 };
 
 Game.prototype.reqLib = function () {
-
+  this.req= "Moscow Mule";
 
   if(this.req === "Manhattan") {
 
     if(this.spot1 !== "Bourbon" || this.spot2 !== "Sweet Vermouth" || this.spot3 !== "Cherry") {
-      console.log("Not manny");
       return;
     } else if (this.spot1 === "Bourbon" && this.spot2 === "Sweet Vermouth" && this.spot2 === "Cherry") {
-      console.log("Manny!");
+      this.bank + 10;
+      console.log("Victory Condition");
       return;
     }
   }//End of Manhattan Test
-  else if (this.req === "") {
+  else if (this.req === "Margarita") {
+    if(this.spot1 !== "Tequila" || this.spot2 !== "TripleSec" || this.spot3 !== "Lime Juice") {
+      return;
+    } else if (this.spot1 === "Tequila" && this.spot2 === "TripleSec" && this.spot3 === "Lime Juice") {
+    console.log("Victory Condition");
+      this.bank + 10;
+      return;
+    }
+  }//End of Margarita Test
+  else if (this.req === "Moscow Mule") {
+    if(this.spot1 !== "Vodka" || this.spot2 !== "Ginger Beer" || this.spot3 !== "Lime Juice") {
+      return;
+    } else if (this.spot1 === "Vodka" && this.spot2 === "Ginger Beer" && this.spot3 === "Lime Juice") {
+    console.log("Victory Condition");
+      this.bank + 10;
+      return;
+    }//End of Moscow Test
+    else if (this.req=== ""){
     return false;
+    }
   }
+
+
 }//End of Request Library Test Function
 
 //B.L.
@@ -45,7 +67,6 @@ $(document).ready(function() {
     event.preventDefault();
     $("#firstSpot").val("");
     var spirVl = $("#brbnBtn").val();
-    console.log(spirVl);
     $("#firstSpot").val(spirVl);
   });
 
@@ -93,10 +114,9 @@ $(".playerForm").submit(function(event) {
     var reqTest2 = $("#secondSpot").val();
     var reqTest3 = $("#thirdSpot").val();
 
-    console.log(newGame.spot1);
-    newGame.spot1 = reqTest1;
-    newGame.spot2 = reqTest2;
-    newGame.spot3 = reqTest3;
+    // newGame.spot1 = reqTest1;
+    // newGame.spot2 = reqTest2;
+    // newGame.spot3 = reqTest3;
     newGame.reqLib();
     console.log(newGame.req);
   });
