@@ -23,6 +23,7 @@
   background-size: cover;
 }
 .orderStatement {
+  border-radius: 5px;
   background-color: white;
   float: right;
 }
@@ -78,6 +79,14 @@ body {
   border-radius: 3px;
 }
 .playerName {
+  border-radius: 3px;
+  background-color: white;
+}
+.playerBank {
+  border-radius: 3px;
+  width: 30%;
+  margin: auto;
+  margin-top: 8px;
   background-color: white;
 }
 #brbnBtn {
