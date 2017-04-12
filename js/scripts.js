@@ -297,11 +297,12 @@ $("#playerInfoForm").submit(function(event) {
   $("#playerUpgradeForm").submit(function(event) {
     event.preventDefault();
     $("#header1").hide();
+    $(".lego").hide()
     $(".playerInput").hide();
     $(".header2").show();
     $(".mainGame, .back ").show();
     $(".welcomeStory").hide();
-    var avatarInput = $("input:radio[name=thisradio]:checked").val();
+    var avatarInput = $("input:radio[name=upradio]:checked").val();
     var playerNameInput = $("#playerNameInput").val();
     $(".playerName").text(playerNameInput);
     $("." + avatarInput).show();
@@ -309,10 +310,12 @@ $("#playerInfoForm").submit(function(event) {
   });
   $("#trigger").click(function(event){
     event.preventDefault();
+
     $(".welcomeStory").show();
     $(".playerUpgrade").show();
     $("#upgradeHeader").show();
     $("script").prepend('<link href="css/styles2.css" rel="stylesheet" type="text/css">')
+    $(".bottombar").attr("src", ("img2/silverbar.jpg"));
   });
 
 });// Doc Ready
