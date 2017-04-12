@@ -195,6 +195,9 @@ $("#playerInfoForm").submit(function(event) {
   $("#guestBtn").click(function(event) {
     event.preventDefault();
     newGame.req = "";
+    $("#firstSpot").val("");
+    $("#secondSpot").val("");
+    $("#thirdSpot").val("");
     newGame.req = newCustomer.createReq();
     newCustomer.tempReqHold = newGame.req;
     var result= newCustomer.statement();
