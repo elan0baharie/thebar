@@ -243,6 +243,7 @@ $("#playerInfoForm").submit(function(event) {
     $("#bank").text("$" + newGame.bank);
     $("h2.happyCount").text(newGame.happyGuest);
     $("h2.sadCount").text(newGame.sadGuest);
+    $("#trns-form button").prop("disabled", true);
   });
 //Next Customer Button
   $("#guestBtn").click(function(event) {
@@ -254,7 +255,7 @@ $("#playerInfoForm").submit(function(event) {
     newGame.req = newCustomer.createReq();
     newCustomer.tempReqHold = newGame.req;
     var result= newCustomer.statement();
-
+    $("#trns-form button").prop("disabled", false);
     $("h3.orderStatement").text(result);
 
   });
