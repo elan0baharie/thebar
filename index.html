@@ -12,12 +12,44 @@
     <title>Pebs Place</title>
   </head>
   <body>
-    <div class="container well">
+    <div class="container">
 <!--header1 shows when we first load game-->
-      <div id="header1">
-        <h1>Welcome to the game</h1>
-        <p>Heres some awesome intro about the game</p>
-        <p>Here's some instructions on playing the game</p>
+      <div class="welcomeStory">
+        <div id="header1" class="well">
+          <h1>Welcome to the game</h1>
+          <p>Heres some awesome intro about the game</p>
+          <p>Here's some instructions on playing the game</p>
+          <button type="button" id="start">Get to Work!!</button>
+        </div>
+        <div class="playerInput well">
+          <form id="playerInfoForm" class="playerForm">
+            <label for="">Please tell us your name</label>
+            <input type="text" id="playerNameInput">
+            <p>Please choose your avatar</p>
+            <label>
+              <input type="radio" name="thisradio" value="avatarA" id="avatarA">
+              <img id="imageAvatarA" src="img/legotender.png" alt=""style="cursor:pointer;">
+            </label>
+            <label>
+              <input type="radio" name="thisradio" value="avatarB" id="avatarB">
+              <img id="imageAvatarB" src="img/legotender2.png" alt=""style="cursor:pointer;">
+            </label>
+            <label>
+              <input type="radio" name="thisradio" value="avatarC" id="avatarC">
+              <img id="imageAvatarC" src="img/legotender3.png" alt=""style="cursor:pointer;">
+            </label>
+            <label>
+              <input type="radio" name="thisradio" value="avatarD" id="avatarD">
+              <img id="imageAvatarD" src="img/legotender4.png" alt=""style="cursor:pointer;">
+            </label>
+
+            <label>
+              <input type="radio" name="thisradio" value="avatarE" id="avatarE">
+              <img id="imageAvatarE" src="img/legotender5.png" alt=""style="cursor:pointer;">
+            </label>
+            <button type="submit" class="playerInfo">Submit</button>
+          </form>
+        </div>
       </div>
 <!--Switch to header2 once game has begun. This will be the main bar game header for first rounds-->
       <div class="header2">

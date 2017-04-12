@@ -162,7 +162,11 @@ $(document).ready(function() {
     console.log(altVl);
     $("#thirdSpot").val(altVl);
   });
-
+// Begin game button
+$("#start").click(function(event){
+  event.preventDefault();
+  $(".playerInput").show();
+});
 //Player info submit
 
 $("#playerInfoForm").submit(function(event) {
@@ -171,6 +175,7 @@ $("#playerInfoForm").submit(function(event) {
   $(".playerInput").hide();
   $(".header2").show();
   $(".mainGame, .back ").show();
+  $(".welcomeStory").hide();
   var avatarInput = $("input:radio[name=thisradio]:checked").val();
   var playerNameInput = $("#playerNameInput").val();
   $(".playerName").text(playerNameInput);
