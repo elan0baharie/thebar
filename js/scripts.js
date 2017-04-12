@@ -16,7 +16,6 @@ var Customer = function (){
   var requestArray= ["Manhattan", "Margarita", "Moscow Mule", "Gin Martini", "Pinot Noir", "Chardonnay", "Vodka Martini", "Gin and Tonic"];
   this.createReq = function () {
     var randomIndex = Math.round((Math.random() * 7));
-    console.log(randomIndex);
     return requestArray[randomIndex];
   };
 
@@ -37,10 +36,11 @@ Game.prototype.reqLib = function () {
     }
   }//End of Manhattan Test
   else if (this.req === "Margarita") {
-    if(this.spot1 !== "Tequila" || this.spot2 !== "TripleSec" || this.spot3 !== "Lime Juice") {
+    if(this.spot1 !== "Tequila" || this.spot2 !== "Triple Sec" || this.spot3 !== "Lime Juice") {
+      console.log("Nope");
       return;
-    } else if (this.spot1 === "Tequila" && this.spot2 === "TripleSec" && this.spot3 === "Lime Juice") {
-    console.log("Victory Condition");
+    } else if (this.spot1 === "Tequila" && this.spot2 === "Triple Sec" && this.spot3 === "Lime Juice") {
+      console.log("Victory Condition");
       this.bank + 10;
       return;
     }
@@ -273,10 +273,16 @@ $("#playerInfoForm").submit(function(event) {
     newGame.spot1 = reqTest1;
     newGame.spot2 = reqTest2;
     newGame.spot3 = reqTest3;
-    // newGame.reqLib();
-    var test = newCustomer.createReq();
-    console.log(test);
+    newGame.reqLib();
 
+  });
+//Next Customer Button
+  $("#guestBtn").click(function(event) {
+    event.preventDefault();
+    newGame.req = "";
+    console.log(newGame.req);
+    newGame.req = newCustomer.createReq();
+    console.log(newGame.req);
   });
 
 });// Doc Ready
