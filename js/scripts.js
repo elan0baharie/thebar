@@ -242,7 +242,7 @@ $(document).ready(function() {
 $("#start").click(function(event){
   event.preventDefault();
   $(".playerInput").show();
-  $("script").prepend('<link href="css/styles2.css" rel="stylesheet" type="text/css">')
+  // $("script").prepend('<link href="css/styles2.css" rel="stylesheet" type="text/css">')
 });
 //Player info submit
 
@@ -292,6 +292,27 @@ $("#playerInfoForm").submit(function(event) {
     $("#trns-form button").prop("disabled", false);
     $("h3.orderStatement").text(result);
 
+  });
+// this is the upgrade avatar button- not in play until level up
+  $("#playerUpgradeForm").submit(function(event) {
+    event.preventDefault();
+    $("#header1").hide();
+    $(".playerInput").hide();
+    $(".header2").show();
+    $(".mainGame, .back ").show();
+    $(".welcomeStory").hide();
+    var avatarInput = $("input:radio[name=thisradio]:checked").val();
+    var playerNameInput = $("#playerNameInput").val();
+    $(".playerName").text(playerNameInput);
+    $("." + avatarInput).show();
+    console.log(avatarInput);
+  });
+  $("#trigger").click(function(event){
+    event.preventDefault();
+    $(".welcomeStory").show();
+    $(".playerUpgrade").show();
+    $("#upgradeHeader").show();
+    $("script").prepend('<link href="css/styles2.css" rel="stylesheet" type="text/css">')
   });
 
 });// Doc Ready
