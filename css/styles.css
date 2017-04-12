@@ -1,11 +1,36 @@
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+.header2 {
+    display: none;
+}
+
+/*Player form*/
+input:checked ~ img{
+  border: 5px solid gray;
+  z-index: 2;
+}
 .playerForm img {
   border: 1px solid black;
   height: 200px;
   width: auto;
 }
-.header2 {
-    display: none;
+input[type="radio"] {
+  display: none;
 }
+input[type="radio"]:checked {
+  border: 4px solid red;
+}
+
+/*Player display*/
 .avatarDisplay {
   float: right;
   text-align: center;
@@ -16,17 +41,59 @@
   display: none;
   height: 200px;
   width: auto;
-
 }
+.playerName {
+  border-radius: 3px;
+  background-color: white;
+}
+.playerBank {
+  border-radius: 3px;
+  width: 30%;
+  margin: auto;
+  margin-top: 8px;
+  background-color: white;
+}
+
+/*Customer order area*/
 .back {
   background-image: url("../img/cimg2004.jpg");
   background-size: cover;
 }
-.orderStatement {
-  border-radius: 5px;
-  background-color: white;
-  margin: auto;
-  width: 40%;
+h3.orderStatement {
+  margin-left: 20%;
+  position: relative;
+  width: 30%;
+  height: auto;
+  text-align: center;
+  line-height: 100px;
+  background-color: #fff;
+  border: 8px solid #666;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  -webkit-box-shadow: 2px 2px 4px #888;
+  -moz-box-shadow: 2px 2px 4px #888;
+  box-shadow: 2px 2px 4px #888;
+}
+h3.orderStatement:before {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 30px;
+  top: 100px;
+  border: 25px solid;
+  border-color: #666 transparent transparent #666;
+}
+h3.orderStatement:after {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 38px;
+  top: 100px;
+  border: 15px solid;
+  border-color: #fff transparent transparent #fff;
 }
 .bottombar {
   border-radius: 5px;
@@ -43,24 +110,8 @@
   margin-top: 200px;
   width: 300px;
 }
-input[type="radio"] {
-  display: none;
-}
-input[type="radio"]:checked {
-  border: 4px solid red;
-}
-body {
-  margin: 0;
-  width: 100%;
-  height: 100%;
-}
 
-.container {
-  margin: 0;
-  width: 100%;
-  height: 100%;
-}
-
+/*Game field*/
 .bar-pad-bg {
   border: 8px ridge #996600;
   /*height: 500px;
@@ -71,25 +122,16 @@ body {
 .bar-pad-bg button {
   margin: 4px 4px;
 }
-#submitBtn {
-  clear: both;
-}
 .textOpt {
   background-color: white;
   border: 2px solid black;
   border-radius: 3px;
 }
-.playerName {
-  border-radius: 3px;
-  background-color: white;
+#submitBtn {
+  clear: both;
 }
-.playerBank {
-  border-radius: 3px;
-  width: 30%;
-  margin: auto;
-  margin-top: 8px;
-  background-color: white;
-}
+
+/*Game buttons*/
 #brbnBtn {
   border: 3px solid #996600;
   background-image: url("../img/brbn.jpg");
@@ -196,8 +238,6 @@ body {
   width: 100%;
   border-radius: 3px;
 }
-
-
 #pNBtn {
   border: 3px solid #996600;
   background-image: url("../img/pN.jpg");
@@ -206,7 +246,6 @@ body {
   width: 100%;
   border-radius: 3px;
 }
-
 #chardBtn {
   border: 3px solid #996600;
   background-image: url("../img/chard.jpg");
