@@ -19,7 +19,11 @@ custImage = function(param){
  $(".customerPic").attr("src", ("img/legoorder" + order + ".png"));
 }
 
-
+// function newbar(){
+//   if (this.bank >= 3) {
+//   return $("script").prepend('<link href="css/styles2.css" rel="stylesheet" type="text/css">');
+//   }
+// }
 
 
 
@@ -32,7 +36,7 @@ var Customer = function (){
   };
   this.tempReqHold="";
   this.statement= function(){
-    if (this.tempReqHold==="Manhattan"){
+   if(this.tempReqHold==="Manhattan"){
       return "Manhattan up...Please!";
   }else if (this.tempReqHold==="Margarita"){
     return "\"Margarita rocks and salt.\"";
@@ -242,7 +246,7 @@ $(document).ready(function() {
 $("#start").click(function(event){
   event.preventDefault();
   $(".playerInput").show();
-  $("script").prepend('<link href="css/styles2.css" rel="stylesheet" type="text/css">')
+  // $("script").prepend('<link href="css/styles2.css" rel="stylesheet" type="text/css">')
 });
 //Player info submit
 
@@ -289,8 +293,12 @@ $("#playerInfoForm").submit(function(event) {
     newGame.req = newCustomer.createReq();
     newCustomer.tempReqHold = newGame.req;
     var result= newCustomer.statement();
+
     $("#trns-form button").prop("disabled", false);
     $("h3.orderStatement").text(result);
+
+    // console.log(newbar());
+    // newbar();
 
   });
 

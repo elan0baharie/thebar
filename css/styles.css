@@ -1,3 +1,9 @@
+#welcome {
+
+  font-family: fantasy;
+  font-size: 30px;
+  text-shadow: 2px,2px,2px;
+}
 body {
   margin: 0;
   width: 100%;
