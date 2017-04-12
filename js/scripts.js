@@ -1,11 +1,8 @@
 //U.I.
 
-var Game = function (req, spot1, spot2, spot3) {
+var Game = function (req) {
   this.plyrNm = "";
-  this.req = "";
-  this.ingredientOne= "";
-  this.ingredientTwo= "";
-  this.ingredientThree= "";
+  this.req = req;
   this.spot1 = "";
   this.spot2 = "";
   this.spot3 = "";
@@ -15,13 +12,12 @@ var Game = function (req, spot1, spot2, spot3) {
 
 
 };
-var Customer = function ( ){
-  var requestArray=["Manhattan","Margarita","Moscow Mule","Gin Martini","Pinot Noir","Chardonnay"];
-  this.randomIndex = function(){
-  return Math.round((Math.random() * 5));
-  };
+var Customer = function (){
+  var requestArray= ["Manhattan", "Margarita", "Moscow Mule", "Gin Martini", "Pinot Noir", "Chardonnay", "Vodka Martini", "Gin and Tonic"];
   this.createReq = function () {
-    return requestArray[this.randomIndex()];
+    var randomIndex = Math.round((Math.random() * 7));
+    console.log(randomIndex);
+    return requestArray[randomIndex];
   };
 
 }
@@ -90,6 +86,16 @@ Game.prototype.reqLib = function () {
       return;
     }
   }//End of Pinot Noir Test
+  else if (this.req === "Gin and Tonic") {
+    if((this.spot3 !== "Tonic" && this.spot1 === "Gin") || (this.spot3 === "Tonic" && this.spot1 !== "Gin")) {
+      console.log("This is not what I had in mind");
+    } else if(this.spot1 === "Gin" && this.spot2 === "" && this.spot3 === "Tonic") {
+      console.log("This is perfect");
+      console.log("Victory Condition");
+      this.bank + 10;
+      return;
+    }
+  }//End of Gin and Tonic Test
   else if (this.req === "Chardonnay") {
     if(this.spot3 !== "Chardonnay") {
       console.log("This is not what I had in mind");
