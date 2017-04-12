@@ -1,27 +1,22 @@
 //U.I.
 
-var Game = function (req, spot1, spot2, spot3) {
+var Game = function (req) {
   this.plyrNm = "";
-  this.req = "";
-  this.ingredientOne= "";
-  this.ingredientTwo= "";
-  this.ingredientThree= "";
+  this.req = req;
   this.spot1 = "";
   this.spot2 = "";
   this.spot3 = "";
-  this.bank = 0;
+  this.bank = -7;
 
 
 
 
 };
-var Customer = function ( ){
-  var requestArray=["Manhattan","Margarita","Moscow Mule","Gin Martini","Pinot Noir","Chardonnay"];
-  this.randomIndex = function(){
-  return Math.round((Math.random() * 5));
-  };
+var Customer = function (){
+  var requestArray= ["Manhattan", "Margarita", "Moscow Mule", "Gin Martini", "Pinot Noir", "Chardonnay", "Vodka Martini", "Gin and Tonic"];
   this.createReq = function () {
-    return requestArray[this.randomIndex()];
+    var randomIndex = Math.round((Math.random() * 7));
+    return requestArray[randomIndex];
   };
 
 }
@@ -41,10 +36,11 @@ Game.prototype.reqLib = function () {
     }
   }//End of Manhattan Test
   else if (this.req === "Margarita") {
-    if(this.spot1 !== "Tequila" || this.spot2 !== "TripleSec" || this.spot3 !== "Lime Juice") {
+    if(this.spot1 !== "Tequila" || this.spot2 !== "Triple Sec" || this.spot3 !== "Lime Juice") {
+      console.log("Nope");
       return;
-    } else if (this.spot1 === "Tequila" && this.spot2 === "TripleSec" && this.spot3 === "Lime Juice") {
-    console.log("Victory Condition");
+    } else if (this.spot1 === "Tequila" && this.spot2 === "Triple Sec" && this.spot3 === "Lime Juice") {
+      console.log("Victory Condition");
       this.bank + 10;
       return;
     }
@@ -67,10 +63,17 @@ Game.prototype.reqLib = function () {
       this.bank + 10;
       return;
     }
-
-
-
   }//End of Gin Martini Test
+  else if (this.req === "Vodka Martini") {
+    if(this.spot1 !== "Vodka" || this.spot2 !== "Dry Vermouth" || this.spot3 !== "Twist") {
+      console.log("Nope");
+      return;
+    } else if (this.spot1 === "Vodka" && this.spot2 === "Dry Vermouth" && this.spot3 === "Twist") {
+    console.log("Victory Condition");
+      this.bank + 10;
+      return;
+    }
+  }//End of Vodka Martini Test
   else if (this.req === "Pinot Noir") {
     if(this.spot3 !== "Pinot Noir") {
       console.log("This is not what I had in mind");
@@ -83,6 +86,16 @@ Game.prototype.reqLib = function () {
       return;
     }
   }//End of Pinot Noir Test
+  else if (this.req === "Gin and Tonic") {
+    if((this.spot3 !== "Tonic" && this.spot1 === "Gin") || (this.spot3 === "Tonic" && this.spot1 !== "Gin")) {
+      console.log("This is not what I had in mind");
+    } else if(this.spot1 === "Gin" && this.spot2 === "" && this.spot3 === "Tonic") {
+      console.log("This is perfect");
+      console.log("Victory Condition");
+      this.bank + 10;
+      return;
+    }
+  }//End of Gin and Tonic Test
   else if (this.req === "Chardonnay") {
     if(this.spot3 !== "Chardonnay") {
       console.log("This is not what I had in mind");
@@ -260,10 +273,16 @@ $("#playerInfoForm").submit(function(event) {
     newGame.spot1 = reqTest1;
     newGame.spot2 = reqTest2;
     newGame.spot3 = reqTest3;
-    // newGame.reqLib();
-    var test = newCustomer.createReq();
-    console.log(test);
+    newGame.reqLib();
 
+  });
+//Next Customer Button
+  $("#guestBtn").click(function(event) {
+    event.preventDefault();
+    newGame.req = "";
+    console.log(newGame.req);
+    newGame.req = newCustomer.createReq();
+    console.log(newGame.req);
   });
 
 });// Doc Ready
