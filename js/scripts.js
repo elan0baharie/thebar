@@ -122,132 +122,151 @@ $(document).ready(function() {
   var newGame = new Game();
   var newCustomer = new Customer();
 //Spirit Buttons
-
-  $("#brbnBtn").click(function(event){
+  $(".primary button").click(function(event){
     event.preventDefault();
     $("#firstSpot").val("");
-    var spirVl = $("#brbnBtn").val();
+    var spirVl = $(this).val();
     $("#firstSpot").val(spirVl);
   });
-  $("#ginBtn").click(function(event){
-    event.preventDefault();
-    $("#firstSpot").val("");
-    var spirVl = $("#ginBtn").val();
-    console.log(spirVl);
-    $("#firstSpot").val(spirVl);
-  });
-  $("#teqBtn").click(function(event){
-    event.preventDefault();
-    $("#firstSpot").val("");
-    var spirVl = $("#teqBtn").val();
-    console.log(spirVl);
-    $("#firstSpot").val(spirVl);
-  });
-  $("#vodBtn").click(function(event){
-    event.preventDefault();
-    $("#firstSpot").val("");
-    var spirVl = $("#vodBtn").val();
-    console.log(spirVl);
-    $("#firstSpot").val(spirVl);
-  });
-  $("#rumBtn").click(function(event){
-    event.preventDefault();
-    $("#firstSpot").val("");
-    var spirVl = $("#rumBtn").val();
-    console.log(spirVl);
-    $("#firstSpot").val(spirVl);
-  });
+  // $("#brbnBtn").click(function(event){
+  //   event.preventDefault();
+  //   $("#firstSpot").val("");
+  //   var spirVl = $("#brbnBtn").val();
+  //   $("#firstSpot").val(spirVl);
+  // });
+  // $("#ginBtn").click(function(event){
+  //   event.preventDefault();
+  //   $("#firstSpot").val("");
+  //   var spirVl = $("#ginBtn").val();
+  //   console.log(spirVl);
+  //   $("#firstSpot").val(spirVl);
+  // });
+  // $("#teqBtn").click(function(event){
+  //   event.preventDefault();
+  //   $("#firstSpot").val("");
+  //   var spirVl = $("#teqBtn").val();
+  //   console.log(spirVl);
+  //   $("#firstSpot").val(spirVl);
+  // });
+  // $("#vodBtn").click(function(event){
+  //   event.preventDefault();
+  //   $("#firstSpot").val("");
+  //   var spirVl = $("#vodBtn").val();
+  //   console.log(spirVl);
+  //   $("#firstSpot").val(spirVl);
+  // });
+  // $("#rumBtn").click(function(event){
+  //   event.preventDefault();
+  //   $("#firstSpot").val("");
+  //   var spirVl = $("#rumBtn").val();
+  //   console.log(spirVl);
+  //   $("#firstSpot").val(spirVl);
+  // });
 
 // below is column 2 mixers
-  $("#swtVrBtn").click(function(event){
+  $(".secondary button").click(function(event){
     event.preventDefault();
     $("#secondSpot").val("");
-    var mxVl = $("#swtVrBtn").val();
+    var mxVl = $(this).val();
     console.log(mxVl);
     $("#secondSpot").val(mxVl);
   });
-
-  $("#trpSecBtn").click(function(event){
-    event.preventDefault();
-    $("#secondSpot").val("");
-    var mxVl = $("#trpSecBtn").val();
-    console.log(mxVl);
-    $("#secondSpot").val(mxVl);
-  });
-  $("#dryVrBtn").click(function(event){
-    event.preventDefault();
-    $("#secondSpot").val("");
-    var mxVl = $("#dryVrBtn").val();
-    console.log(mxVl);
-    $("#secondSpot").val(mxVl);
-  });
-  $("#gingBtn").click(function(event){
-    event.preventDefault();
-    $("#secondSpot").val("");
-    var mxVl = $("#gingBtn").val();
-    console.log(mxVl);
-    $("#secondSpot").val(mxVl);
-  });
+  // $("#swtVrBtn").click(function(event){
+  //   event.preventDefault();
+  //   $("#secondSpot").val("");
+  //   var mxVl = $("#swtVrBtn").val();
+  //   console.log(mxVl);
+  //   $("#secondSpot").val(mxVl);
+  // });
+  //
+  // $("#trpSecBtn").click(function(event){
+  //   event.preventDefault();
+  //   $("#secondSpot").val("");
+  //   var mxVl = $("#trpSecBtn").val();
+  //   console.log(mxVl);
+  //   $("#secondSpot").val(mxVl);
+  // });
+  // $("#dryVrBtn").click(function(event){
+  //   event.preventDefault();
+  //   $("#secondSpot").val("");
+  //   var mxVl = $("#dryVrBtn").val();
+  //   console.log(mxVl);
+  //   $("#secondSpot").val(mxVl);
+  // });
+  // $("#gingBtn").click(function(event){
+  //   event.preventDefault();
+  //   $("#secondSpot").val("");
+  //   var mxVl = $("#gingBtn").val();
+  //   console.log(mxVl);
+  //   $("#secondSpot").val(mxVl);
+  // });
 // below is column 3 and 4
-  $("#chryBtn").click(function(event){
+  $(".thirdFourth button").click(function(event){
     event.preventDefault();
     $("#thirdSpot").val("");
-    var altVl = $("#chryBtn").val();
+    var altVl = $(this).val();
     console.log(altVl);
     $("#thirdSpot").val(altVl);
   });
-  $("#limeJuiceBtn").click(function(event){
-    event.preventDefault();
-    $("#thirdSpot").val("");
-    var altVl = $("#limeJuiceBtn").val();
-    console.log(altVl);
-    $("#thirdSpot").val(altVl);
-  });
-  $("#twistBtn").click(function(event){
-    event.preventDefault();
-    $("#thirdSpot").val("");
-    var altVl = $("#twistBtn").val();
-    console.log(altVl);
-    $("#thirdSpot").val(altVl);
-  });
-  $("#tonicBtn").click(function(event){
-    event.preventDefault();
-    $("#thirdSpot").val("");
-    var altVl = $("#tonicBtn").val();
-    console.log(altVl);
-    $("#thirdSpot").val(altVl);
-  });
-
-
-  $("#pNBtn").click(function(event){
-    event.preventDefault();
-    $("#thirdSpot").val("");
-    var rdWnVl = $("#pNBtn").val();
-    console.log(rdWnVl);
-    $("#thirdSpot").val(rdWnVl);
-  });
-
-  $("#chardBtn").click(function(event){
-    event.preventDefault();
-    $("#thirdSpot").val("");
-    var rdWnVl = $("#chardBtn").val();
-    console.log(rdWnVl);
-    $("#thirdSpot").val(rdWnVl);
-  });
-  $("#beerBtn").click(function(event){
-    event.preventDefault();
-    $("#thirdSpot").val("");
-    var rdWnVl = $("#beerBtn").val();
-    console.log(rdWnVl);
-    $("#thirdSpot").val(rdWnVl);
-  });
-  $("#sodaBtn").click(function(event){
-    event.preventDefault();
-    $("#thirdSpot").val("");
-    var altVl = $("#sodaBtn").val();
-    console.log(altVl);
-    $("#thirdSpot").val(altVl);
-  });
+  // $("#chryBtn").click(function(event){
+  //   event.preventDefault();
+  //   $("#thirdSpot").val("");
+  //   var altVl = $("#chryBtn").val();
+  //   console.log(altVl);
+  //   $("#thirdSpot").val(altVl);
+  // });
+  // $("#limeJuiceBtn").click(function(event){
+  //   event.preventDefault();
+  //   $("#thirdSpot").val("");
+  //   var altVl = $("#limeJuiceBtn").val();
+  //   console.log(altVl);
+  //   $("#thirdSpot").val(altVl);
+  // });
+  // $("#twistBtn").click(function(event){
+  //   event.preventDefault();
+  //   $("#thirdSpot").val("");
+  //   var altVl = $("#twistBtn").val();
+  //   console.log(altVl);
+  //   $("#thirdSpot").val(altVl);
+  // });
+  // $("#tonicBtn").click(function(event){
+  //   event.preventDefault();
+  //   $("#thirdSpot").val("");
+  //   var altVl = $("#tonicBtn").val();
+  //   console.log(altVl);
+  //   $("#thirdSpot").val(altVl);
+  // });
+  //
+  //
+  // $("#pNBtn").click(function(event){
+  //   event.preventDefault();
+  //   $("#thirdSpot").val("");
+  //   var rdWnVl = $("#pNBtn").val();
+  //   console.log(rdWnVl);
+  //   $("#thirdSpot").val(rdWnVl);
+  // });
+  //
+  // $("#chardBtn").click(function(event){
+  //   event.preventDefault();
+  //   $("#thirdSpot").val("");
+  //   var rdWnVl = $("#chardBtn").val();
+  //   console.log(rdWnVl);
+  //   $("#thirdSpot").val(rdWnVl);
+  // });
+  // $("#beerBtn").click(function(event){
+  //   event.preventDefault();
+  //   $("#thirdSpot").val("");
+  //   var rdWnVl = $("#beerBtn").val();
+  //   console.log(rdWnVl);
+  //   $("#thirdSpot").val(rdWnVl);
+  // });
+  // $("#sodaBtn").click(function(event){
+  //   event.preventDefault();
+  //   $("#thirdSpot").val("");
+  //   var altVl = $("#sodaBtn").val();
+  //   console.log(altVl);
+  //   $("#thirdSpot").val(altVl);
+  // });
 //Player info submit
 
 $("#playerInfoForm").submit(function(event) {
