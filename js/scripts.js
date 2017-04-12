@@ -22,9 +22,9 @@ var Game = function (req) {
 
 
 var Customer = function (){
-  var requestArray= ["Manhattan", "Margarita", "Moscow Mule", "Gin Martini", "Pinot Noir", "Chardonnay", "Vodka Martini", "Gin and Tonic"];
+  var requestArray= ["Manhattan", "Margarita", "Moscow Mule", "Gin Martini", "Pinot Noir", "Chardonnay", "Vodka Martini", "Gin and Tonic","Dark and Stormy", "Cabernet"];
   this.createReq = function () {
-    var randomIndex = Math.round((Math.random() * 7));
+    var randomIndex = Math.round((Math.random() * 9));
     return requestArray[randomIndex];
   };
   this.tempReqHold="";
@@ -45,10 +45,14 @@ var Customer = function (){
     return "\"Vodka Martini please. Shaken not stirred.\"";
   }else if (this.tempReqHold==="Gin and Tonic"){
     return "\"One G and T please.\"";
+}else if (this.tempReqHold==="Dark and Stormy"){
+  return "\"Please one Dark and Stormy.\"";
+}
+else if (this.tempReqHold==="Cabernet"){
+  return "\"Get me the boldest red wine you have.\"";
 }
 }
 }
-
 
 
 
@@ -152,7 +156,7 @@ Game.prototype.reqLib = function () {
       this.sadGuest= this.sadGuest+1;
       return "\"Get me some water instead\"";
     } else if(this.spot1 !== "" || this.spot2 !== "" && this.spot3 === "Chardonnay") {
-      cthis.bank = this.bank - 10;
+      this.bank = this.bank - 10;
       this.sadGuest= this.sadGuest+1;
       return "\"Not exactly it\"";
     } else if(this.spot1 === "" && this.spot2 === "" && this.spot3 === "Chardonnay") {
@@ -162,9 +166,34 @@ Game.prototype.reqLib = function () {
       return"\"Perfect!\"";
     }
   }//End of Chardonnay Test
+  if(this.req === "Dark and Stormy") {
 
+    if(this.spot1 !== "Rum" || this.spot2 !== "Ginger Beer" || this.spot3 !== "Lime Juice") {
+      this.bank= this.bank-10;
+      this.sadGuest=this.sadGuest +1;
 
+      return "\"Yuck. I would call this Off the Mark & Stormy!\"";
+    } else if (this.spot1 === "Rum" && this.spot2 === "Ginger Beer" && this.spot3 === "Lime Juice") {
+      this.bank = this.bank + 10;
+      this.happyGuest= this.happyGuest+1;
+      return "\"Wow that is refreshing\"";
+    }
+  } else if (this.req === "Cabernet") {
+    if(this.spot3 !== "Cabernet") {
+      this.bank = this.bank - 10;
+      this.sadGuest= this.sadGuest+1;
+      return "\"No good Buddy.\"";
+    } else if(this.spot1 !== "" || this.spot2 !== "" && this.spot3 === "Cabernet") {
+      this.bank = this.bank - 10;
+      this.sadGuest= this.sadGuest+1;
+      return "\"Not exactly it\"";
+    } else if(this.spot1 === "" && this.spot2 === "" && this.spot3 === "Cabernet") {
+      this.bank = this.bank + 10;
+      this.happyGuest= this.happyGuest+1;
 
+      return"\"Bold and Red. Exactly what I wanted\"";
+    }
+  }
 
 
 
@@ -229,8 +258,7 @@ $("#playerInfoForm").submit(function(event) {
 
 //Submit Button
   $("#trns-form").submit(function(event) {
-    event.preventDefault();
-
+  event.preventDefault();
     var reqTest1 = $("#firstSpot").val();
     var reqTest2 = $("#secondSpot").val();
     var reqTest3 = $("#thirdSpot").val();
@@ -243,6 +271,7 @@ $("#playerInfoForm").submit(function(event) {
     $("#bank").text("$" + newGame.bank);
     $("h2.happyCount").text(newGame.happyGuest);
     $("h2.sadCount").text(newGame.sadGuest);
+
   });
 //Next Customer Button
   $("#guestBtn").click(function(event) {
