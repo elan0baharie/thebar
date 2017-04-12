@@ -3,7 +3,9 @@ body {
   width: 100%;
   height: 100%;
 }
-
+.mainGame, .back {
+  display: none;
+}
 .container {
   margin: 0;
   width: 100%;
@@ -56,16 +58,18 @@ input[type="radio"]:checked {
 
 /*Customer order area*/
 .back {
+  border: 0;
   background-image: url("../img/cimg2004.jpg");
   background-size: cover;
 }
 h3.orderStatement {
   margin-left: 20%;
-  position: relative;
+  /*position: absolute;*/
   width: 30%;
   height: auto;
   text-align: center;
-  line-height: 100px;
+  /*line-height: 100px;*/
+  padding: 3;
   background-color: #fff;
   border: 8px solid #666;
   -webkit-border-radius: 30px;
@@ -74,26 +78,6 @@ h3.orderStatement {
   -webkit-box-shadow: 2px 2px 4px #888;
   -moz-box-shadow: 2px 2px 4px #888;
   box-shadow: 2px 2px 4px #888;
-}
-h3.orderStatement:before {
-  content: ' ';
-  position: absolute;
-  width: 0;
-  height: 0;
-  left: 30px;
-  top: 100px;
-  border: 25px solid;
-  border-color: #666 transparent transparent #666;
-}
-h3.orderStatement:after {
-  content: ' ';
-  position: absolute;
-  width: 0;
-  height: 0;
-  left: 38px;
-  top: 100px;
-  border: 15px solid;
-  border-color: #fff transparent transparent #fff;
 }
 .bottombar {
   border-radius: 5px;
@@ -107,15 +91,13 @@ h3.orderStatement:after {
 .back button {
   float: right;
   clear: both;
-  margin-top: 200px;
-  width: 300px;
+  /*margin-top: 200px;*/
+  width: 200px;
 }
 
 /*Game field*/
 .bar-pad-bg {
   border: 8px ridge #996600;
-  /*height: 500px;
-  width: 400px;*/
   background-image: url("../img/barpad-bg.jpg");
   border-radius: 9px;
 }
