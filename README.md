@@ -2,7 +2,7 @@
 
 #### _Bar drink ingredients game , 04.13.17_
 
-#### By _Benjamin Petrosky, Starlynn Start, Elon Baharie, Peter Karella_
+#### By _Benjamin Petrosky, Starlynne Start, Elan Baharie, Peter Karella_
 
 ## Description
 
@@ -22,7 +22,7 @@ _This app is designed as a learning tool for bartenders and drink enthusiasts th
 
 ## Known Bugs
 
-There are no known bugs.
+_There are no known bugs._
 
 ## Support and contact details
 
@@ -30,11 +30,11 @@ _If you have any suggestions please feel free to submit a contribution to the co
 
 ## Technologies Used
 
-HTML
-CSS
-JAVASCRIPT
-JQUERY
-BOOTSTRAP
+_HTML_
+_CSS_
+_JAVASCRIPT_
+_JQUERY_
+_BOOTSTRAP_
 
 ### License
 
