@@ -18,7 +18,26 @@ var Customer = function (){
     var randomIndex = Math.round((Math.random() * 7));
     return requestArray[randomIndex];
   };
-
+  this.tempReqHold="";
+  this.statement= function(){
+    if (this.tempReqHold==="Manhattan"){
+      return "Manhattan up...Please!";
+  }else if (this.tempReqHold==="Margarita"){
+    return "Margarita rocks and some salt";
+  }else if (this.tempReqHold==="Moscow Mule"){
+    return " I need a Moscow Mule please. You have the copper mugs right?";
+  }else if (this.tempReqHold==="Gin Martini"){
+    return " Gin Marini please. Don't bruise it.";
+  }else if (this.tempReqHold==="Pinot Noir"){
+    return "Can I have a light bodied red wine?";
+  }else if (this.tempReqHold==="Chardonnay"){
+    return " Can I get a white wine that is oaky and buttery?";
+  }else if (this.tempReqHold==="Vodka Martini"){
+    return "Vodka Martini shaken not stirred.";
+  }else if (this.tempReqHold==="Gin and Tonic"){
+    return " One G and T please.";
+}
+}
 }
 
 
@@ -177,8 +196,12 @@ $("#playerInfoForm").submit(function(event) {
     event.preventDefault();
     newGame.req = "";
     newGame.req = newCustomer.createReq();
-    console.log(newGame.bank);
-    console.log(newGame.req);
+    newCustomer.tempReqHold = newGame.req;
+    var result= newCustomer.statement();
+    $("#bank").text(newGame.bank);
+    console.log(result);
+    $("h3.orderStatement").text(result);
+
   });
 
 });// Doc Ready
