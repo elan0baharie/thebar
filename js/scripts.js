@@ -19,7 +19,11 @@ custImage = function(param){
  $(".customerPic").attr("src", ("img/legoorder" + order + ".png"));
 }
 
-
+// function newbar(){
+//   if (this.bank >= 3) {
+//   return $("script").prepend('<link href="css/styles2.css" rel="stylesheet" type="text/css">');
+//   }
+// }
 
 
 
@@ -32,7 +36,7 @@ var Customer = function (){
   };
   this.tempReqHold="";
   this.statement= function(){
-    if (this.tempReqHold==="Manhattan"){
+   if(this.tempReqHold==="Manhattan"){
       return "Manhattan up...Please!";
   }else if (this.tempReqHold==="Margarita"){
     return "\"Margarita rocks and salt.\"";
@@ -289,8 +293,12 @@ $("#playerInfoForm").submit(function(event) {
     newGame.req = newCustomer.createReq();
     newCustomer.tempReqHold = newGame.req;
     var result= newCustomer.statement();
+
     $("#trns-form button").prop("disabled", false);
     $("h3.orderStatement").text(result);
+
+    // console.log(newbar());
+    // newbar();
 
   });
 // this is the upgrade avatar button- not in play until level up
