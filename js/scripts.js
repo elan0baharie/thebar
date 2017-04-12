@@ -9,7 +9,7 @@ var Game = function (req, spot1, spot2, spot3) {
   this.spot1 = "";
   this.spot2 = "";
   this.spot3 = "";
-  this.bank = 0;
+  this.bank = -7;
 
 
 
@@ -67,10 +67,17 @@ Game.prototype.reqLib = function () {
       this.bank + 10;
       return;
     }
-
-
-
   }//End of Gin Martini Test
+  else if (this.req === "Vodka Martini") {
+    if(this.spot1 !== "Vodka" || this.spot2 !== "Dry Vermouth" || this.spot3 !== "Twist") {
+      console.log("Nope");
+      return;
+    } else if (this.spot1 === "Vodka" && this.spot2 === "Dry Vermouth" && this.spot3 === "Twist") {
+    console.log("Victory Condition");
+      this.bank + 10;
+      return;
+    }
+  }//End of Vodka Martini Test
   else if (this.req === "Pinot Noir") {
     if(this.spot3 !== "Pinot Noir") {
       console.log("This is not what I had in mind");
