@@ -14,7 +14,10 @@ var Game = function (req) {
 
 
 
-
+custImage = function(param){
+ var order = Math.floor(Math.random() * 12) + 1;
+ $(".customerPic").attr("src", ("img/legoorder" + order + ".png"));
+}
 
 
 
@@ -239,6 +242,7 @@ $(document).ready(function() {
 $("#start").click(function(event){
   event.preventDefault();
   $(".playerInput").show();
+  $("script").prepend('<link href="css/styles2.css" rel="stylesheet" type="text/css">')
 });
 //Player info submit
 
@@ -271,19 +275,21 @@ $("#playerInfoForm").submit(function(event) {
     $("#bank").text("$" + newGame.bank);
     $("h2.happyCount").text(newGame.happyGuest);
     $("h2.sadCount").text(newGame.sadGuest);
+    $("#trns-form button").prop("disabled", true);
 
   });
 //Next Customer Button
   $("#guestBtn").click(function(event) {
     event.preventDefault();
     newGame.req = "";
+    custImage();
     $("#firstSpot").val("");
     $("#secondSpot").val("");
     $("#thirdSpot").val("");
     newGame.req = newCustomer.createReq();
     newCustomer.tempReqHold = newGame.req;
     var result= newCustomer.statement();
-
+    $("#trns-form button").prop("disabled", false);
     $("h3.orderStatement").text(result);
 
   });
