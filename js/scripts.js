@@ -29,8 +29,8 @@ Game.prototype.reqLib = function () {
 
     if(this.spot1 !== "Bourbon" || this.spot2 !== "Sweet Vermouth" || this.spot3 !== "Cherry") {
       return;
-    } else if (this.spot1 === "Bourbon" && this.spot2 === "Sweet Vermouth" && this.spot2 === "Cherry") {
-      this.bank + 10;
+    } else if (this.spot1 === "Bourbon" && this.spot2 === "Sweet Vermouth" && this.spot3 === "Cherry") {
+      this.bank = this.bank + 10;
       console.log("Victory Condition");
       return;
     }
@@ -41,7 +41,7 @@ Game.prototype.reqLib = function () {
       return;
     } else if (this.spot1 === "Tequila" && this.spot2 === "Triple Sec" && this.spot3 === "Lime Juice") {
       console.log("Victory Condition");
-      this.bank + 10;
+      this.bank = this.bank + 10;
       return;
     }
   }//End of Margarita Test
@@ -50,7 +50,7 @@ Game.prototype.reqLib = function () {
       return;
     } else if (this.spot1 === "Vodka" && this.spot2 === "Ginger Beer" && this.spot3 === "Lime Juice") {
     console.log("Victory Condition");
-      this.bank + 10;
+      this.bank = this.bank + 10;
       return;
     }
   }//End of Moscow Test
@@ -60,7 +60,7 @@ Game.prototype.reqLib = function () {
       return;
     } else if (this.spot1 === "Gin" && this.spot2 === "Dry Vermouth" && this.spot3 === "Twist") {
     console.log("Victory Condition");
-      this.bank + 10;
+      this.bank = this.bank + 10;
       return;
     }
   }//End of Gin Martini Test
@@ -70,7 +70,7 @@ Game.prototype.reqLib = function () {
       return;
     } else if (this.spot1 === "Vodka" && this.spot2 === "Dry Vermouth" && this.spot3 === "Twist") {
     console.log("Victory Condition");
-      this.bank + 10;
+      this.bank = this.bank + 10;
       return;
     }
   }//End of Vodka Martini Test
@@ -82,7 +82,7 @@ Game.prototype.reqLib = function () {
     } else if(this.spot1 === "" && this.spot2 === "" && this.spot3 === "Pinot Noir") {
       console.log("This is perfect");
       console.log("Victory Condition");
-      this.bank + 10;
+      this.bank = this.bank + 10;
       return;
     }
   }//End of Pinot Noir Test
@@ -92,7 +92,7 @@ Game.prototype.reqLib = function () {
     } else if(this.spot1 === "Gin" && this.spot2 === "" && this.spot3 === "Tonic") {
       console.log("This is perfect");
       console.log("Victory Condition");
-      this.bank + 10;
+      this.bank = this.bank + 10;
       return;
     }
   }//End of Gin and Tonic Test
@@ -104,13 +104,10 @@ Game.prototype.reqLib = function () {
     } else if(this.spot1 === "" && this.spot2 === "" && this.spot3 === "Chardonnay") {
       console.log("This is perfect");
       console.log("Victory Condition");
-      this.bank + 10;
+      this.bank = this.bank + 10;
       return;
     }
   }//End of Chardonnay Test
-  else if (this.bank === 0) {
-    return;
-  }
 
 
 
@@ -179,8 +176,8 @@ $("#playerInfoForm").submit(function(event) {
   $("#guestBtn").click(function(event) {
     event.preventDefault();
     newGame.req = "";
-    console.log(newGame.req);
     newGame.req = newCustomer.createReq();
+    console.log(newGame.bank);
     console.log(newGame.req);
   });
 
