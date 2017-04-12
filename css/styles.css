@@ -25,7 +25,8 @@
 .orderStatement {
   border-radius: 5px;
   background-color: white;
-  float: right;
+  margin: auto;
+  width: 40%;
 }
 .bottombar {
   border-radius: 5px;
@@ -39,7 +40,7 @@
 .back button {
   float: right;
   clear: both;
-  margin-top: 100px;
+  margin-top: 200px;
   width: 300px;
 }
 input[type="radio"] {
