@@ -9,8 +9,8 @@
 .avatarDisplay {
   float: right;
   text-align: center;
-  background-image: url("../img/graylego.jpg");
-  min-height: 550px;
+  background-image: url("../img/grayback.jpg");
+  min-height: 540px;
 }
 .avatarDisplay img {
   display: none;
@@ -77,7 +77,9 @@ body {
   border: 2px solid black;
   border-radius: 3px;
 }
-
+.playerName {
+  background-color: white;
+}
 #brbnBtn {
   border: 3px solid #996600;
   background-image: url("../img/brbn.jpg");
