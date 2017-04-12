@@ -37,7 +37,12 @@ body {
 .header2 {
     display: none;
 }
-
+#upgradeHeader {
+  display: none;
+}
+.playerUpgrade {
+  display: none;
+}
 /*Player form*/
 input:checked ~ img{
   border: 5px solid gray;

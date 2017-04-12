@@ -1,3 +1,213 @@
-h1 {
-  color: red;
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+.mainGame, .back {
+  display: none;
+}
+.playerUpgrade {
+  opacity: 0.8;
+  margin-top: 40%;
+}
+.container {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+.welcomeStory {
+  background-image: url("../img2/clubfront.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 900px;
+  width: 100%;
+}
+#upgradeHeader {
+  opacity: 0.8;
+  text-align: center;
+}
+#header1 {
+  opacity: 0.7;
+  text-align: center;
+}
+
+.header2 {
+    display: none;
+}
+
+/*Player form*/
+input:checked ~ img{
+  border: 5px solid gray;
+  z-index: 2;
+}
+.playerForm img {
+  border: 1px solid black;
+  height: 200px;
+  width: auto;
+}
+input[type="radio"] {
+  display: none;
+}
+input[type="radio"]:checked {
+  border: 4px solid red;
+}
+
+/*Player display*/
+.avatarDisplay {
+  float: right;
+  text-align: center;
+  background-image: url("../img2/barbackground.jpg");
+  min-height: 550px;
+  margin-bottom: -5%;
+}
+.avatarDisplay img {
+  display: none;
+  height: 200px;
+  width: auto;
+}
+.playerName {
+  border-radius: 3px;
+  background-color: white;
+}
+.playerBank {
+  border-radius: 3px;
+  width: 30%;
+  margin: auto;
+  margin-top: 8px;
+  background-color: white;
+}
+
+/*Customer order area*/
+.back {
+  border: 0;
+  background-image: url("../img2/club.jpg");
+  background-size: cover;
+}
+h3.orderStatement {
+  margin-left: 20%;
+  /*position: absolute;*/
+  width: 30%;
+  height: auto;
+  text-align: center;
+  /*line-height: 100px;*/
+  padding: 3;
+  background-color: #fff;
+  border: 3px solid gray;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 2px 2px 4px #888;
+  -moz-box-shadow: 2px 2px 4px #888;
+  box-shadow: 2px 2px 4px #888;
+}
+.bottombar {
+  height: 20%;
+  border-radius: 5px;
+  margin-bottom: -20px;
+  width: 90%;
+}
+
+.customerPic {
+  height: 250px;
+  width: auto;
+}
+.back button {
+  float: right;
+  clear: both;
+  /*margin-top: 200px;*/
+  width: 200px;
+}
+
+/*Game field*/
+.bar-pad-bg {
+  border: 8px ridge white;
+  background-image: url("../img2/blacktile.jpg");
+  border-radius: 9px;
+}
+.form-control {
+  width: 55%;
+}
+.textOpt {
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 3px;
+}
+#submitBtn {
+  clear: both;
+  width: 50%;
+  float: right;
+}
+
+/*Game buttons*/
+.bar-pad-bg button {
+  margin: 8px;
+  border: 3px solid white;
+  background-size: cover;
+  height: 65px;
+  width: 100%;
+  border-radius: 3px;
+}
+#brbnBtn {
+  background-image: url("../img/brbn.jpg");
+}
+#ginBtn {
+  background-image: url("../img/gin.jpeg");
+}
+#teqBtn {
+  background-image: url("../img/teq.png");
+}
+#vodBtn {
+  background-image: url("../img/vod.png");
+}
+#rumBtn {
+  background-image: url("../img/rum.jpg");
+}
+/*below is column 2*/
+#swtVrBtn {
+  background-image: url("../img/swtV.jpg");
+}
+#trpSecBtn {
+  background-image: url("../img/trp.png");
+}
+#dryVrBtn {
+  background-image: url("../img/dry.jpg");
+}
+#gingBtn {
+  background-image: url("../img/ging.jpg");
+}
+/*below is column 3 and 4*/
+#chryBtn {
+  background-image: url("../img/chry.jpg");
+}
+#limeJuiceBtn {
+  background-image: url("../img/limejuice.jpg");
+}
+#twistBtn {
+  background-image: url("../img/twist.jpg");
+}
+#tonicBtn {
+  background-image: url("../img/tonic.jpg");
+}
+#pNBtn {
+  background-image: url("../img/pN.jpg");
+}
+#chardBtn {
+  background-image: url("../img/chard.jpg");
+}
+#beerBtn {
+  background-image: url("../img/beer.png");
+}
+#sodaBtn {
+  background-image: url("../img/soda.jpeg");
+}
+#syrupBtn {
+  background-image: url("../img/syrup.jpeg");
+}
+#lemonBtn {
+  background-image: url("../img/lemon.jpeg");
+}
+#cBtn {
+  background-image: url("../img/cab.png");
+>>>>>>> 1cbe2a05d5f194993204044079eb79b2ddad020e
 }
