@@ -14,7 +14,10 @@ var Game = function (req) {
 
 
 
-
+custImage = function(param){
+ var order = Math.floor(Math.random() * 12) + 1;
+ $(".customerPic").attr("src", ("img/legoorder" + order + ".png"));
+}
 
 
 
@@ -249,6 +252,7 @@ $("#playerInfoForm").submit(function(event) {
   $("#guestBtn").click(function(event) {
     event.preventDefault();
     newGame.req = "";
+    custImage();
     $("#firstSpot").val("");
     $("#secondSpot").val("");
     $("#thirdSpot").val("");
