@@ -170,6 +170,7 @@ $("#playerInfoForm").submit(function(event) {
   $("#header1").hide();
   $(".playerInput").hide();
   $(".header2").show();
+  $(".mainGame, .back ").show();
   var avatarInput = $("input:radio[name=thisradio]:checked").val();
   var playerNameInput = $("#playerNameInput").val();
   $(".playerName").text(playerNameInput);
@@ -198,7 +199,7 @@ $("#playerInfoForm").submit(function(event) {
     newGame.req = newCustomer.createReq();
     newCustomer.tempReqHold = newGame.req;
     var result= newCustomer.statement();
-    $("#bank").text(newGame.bank);
+    $("#bank").text("$" + newGame.bank);
     console.log(result);
     $("h3.orderStatement").text(result);
 
