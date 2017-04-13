@@ -17,25 +17,19 @@ var Game = function (req) {
       this.bank = this.bank + 2;
       this.wOrL === "";
     }
-
     } else {
       return}
   }
   this.detectBank = function () {
     var bnkDtct = this.bank;
-
     if(bnkDtct >= 10) {
       $("#trigger").show();
       alert("You are now eligible for our bar upgrade. It'll cost $100. Push the upgrade button at the bottom of the game if you like!");
     } else {
       return;
     }
-
-
   }
 };
-
-
 
 custImage = function(param){
  var order = Math.round((Math.random() * 12)+1);
@@ -71,23 +65,17 @@ var Customer = function (){
     return "\"Vodka Martini please. Shaken not stirred.\"";
   }else if (this.tempReqHold==="Gin and Tonic"){
     return "\"One G and T please.\"";
-}else if (this.tempReqHold==="Dark and Stormy"){
-  return "\"Please one Dark and Stormy.\"";
-}else if (this.tempReqHold==="Cabernet"){
-  return "\"Get me the boldest red wine you have.\"";
-}else if (this.tempReqHold==="Old Fashion"){
-  return "\"Do you know how to make an Old Fashion?\"";
-}else if (this.tempReqHold==="Daiquiri"){
-  return "\"I see a little sun. Get me a Daiquiri.\"";
+  }else if (this.tempReqHold==="Dark and Stormy"){
+    return "\"Please one Dark and Stormy.\"";
+  }else if (this.tempReqHold==="Cabernet"){
+    return "\"Get me the boldest red wine you have.\"";
+  }else if (this.tempReqHold==="Old Fashion"){
+    return "\"Do you know how to make an Old Fashion?\"";
+  }else if (this.tempReqHold==="Daiquiri"){
+    return "\"I see a little sun. Get me a Daiquiri.\"";
+  }
 }
 }
-}
-
-
-
-
-
-
 
 Game.prototype.reqLib = function () {
 
@@ -96,7 +84,6 @@ Game.prototype.reqLib = function () {
     if(this.spot1 !== "Bourbon" || this.spot2 !== "Sweet Vermouth" || this.spot3 !== "Cherry") {
       this.bank= this.bank-10;
       this.sadGuest=this.sadGuest+1;
-
       return "\"You Suck!\"";
     } else if (this.spot1 === "Bourbon" && this.spot2 === "Sweet Vermouth" && this.spot3 === "Cherry") {
       this.bank = this.bank + 10;
@@ -193,16 +180,13 @@ Game.prototype.reqLib = function () {
       this.wOrL = "Victory";
       this.bank = this.bank + 10;
       this.happyGuest= this.happyGuest+1;
-
       return"\"Perfect!\"";
     }
   }//End of Chardonnay Test
   else if(this.req === "Dark and Stormy") {
-
     if(this.spot1 !== "Rum" || this.spot2 !== "Ginger Beer" || this.spot3 !== "Lime Juice") {
       this.bank= this.bank-10;
       this.sadGuest=this.sadGuest +1;
-
       return "\"Yuck. I would call this Off the Mark & Stormy!\"";
     } else if (this.spot1 === "Rum" && this.spot2 === "Ginger Beer" && this.spot3 === "Lime Juice") {
       this.wOrL = "Victory";
@@ -223,16 +207,13 @@ Game.prototype.reqLib = function () {
       this.wOrL = "Victory";
       this.bank = this.bank + 10;
       this.happyGuest= this.happyGuest+1;
-
       return"\"Bold and Red. Exactly what I wanted\"";
     }
   }//End of Chardonnay Test
   else if(this.req === "Old Fashion") {
-
     if(this.spot1 !== "Bourbon" || this.spot2 !== "Simple Syrup" || this.spot3 !== "Cherry") {
       this.bank= this.bank-10;
       this.sadGuest=this.sadGuest +1;
-
       return "\"Horrible.You probably like pinneaple on your pizza too.\"";
     } else if (this.spot1 === "Bourbon" && this.spot2 === "Simple Syrup" && this.spot3 === "Cherry") {
       this.wOrL = "Victory";
@@ -245,7 +226,6 @@ Game.prototype.reqLib = function () {
     if(this.spot1 !== "Rum" || this.spot2 !== "Simple Syrup" || this.spot3 !== "Lemon") {
       this.bank= this.bank-10;
       this.sadGuest=this.sadGuest +1;
-
       return "\"Jimmy Buffet would be ashamed of you\"";
       } else if (this.spot1 === "Rum" && this.spot2 === "Simple Syrup" && this.spot3 === "Lemon") {
         this.wOrL = "Victory";
@@ -254,8 +234,6 @@ Game.prototype.reqLib = function () {
         return "\"It's like I'm on the islands.\"";
       }
   }
-
-
 }//End of Request Library Test Function
 
 //B.L.
@@ -295,7 +273,6 @@ $("#start").click(function(event){
   $(".playerInput").show();
 });
 //Player info submit
-
 $("#playerInfoForm").submit(function(event) {
   event.preventDefault();
   $("#header1").hide();
@@ -317,7 +294,6 @@ $("#playerInfoForm").submit(function(event) {
     var reqTest1 = $("#firstSpot").val();
     var reqTest2 = $("#secondSpot").val();
     var reqTest3 = $("#thirdSpot").val();
-
     newGame.spot1 = reqTest1;
     newGame.spot2 = reqTest2;
     newGame.spot3 = reqTest3;
@@ -325,9 +301,7 @@ $("#playerInfoForm").submit(function(event) {
     newGame.upgradeTest();
     newGame.detectBank();
     $("h3.orderStatement").text(outPut);
-
     $("#bank").text("$" + newGame.bank);
-
     $("h2.happyCount").text(newGame.happyGuest);
     $("h2.sadCount").text(newGame.sadGuest);
     $("#trns-form button").prop("disabled", true);
@@ -344,14 +318,10 @@ $("#playerInfoForm").submit(function(event) {
     newGame.req = newCustomer.createReq();
     newCustomer.tempReqHold = newGame.req;
     var result= newCustomer.statement();
-
     $("#trns-form button").prop("disabled", false);
     $("h3.orderStatement").text(result);
-
-    // console.log(newbar());
-    // newbar();
-
   });
+
 // this is the upgrade avatar button- not in play until level up
   $("#playerUpgradeForm").submit(function(event) {
     event.preventDefault();

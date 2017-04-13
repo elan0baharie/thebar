@@ -31,7 +31,6 @@ body {
   opacity: 0.7;
   text-align: center;
 }
-
 .header2 {
     display: none;
 }
@@ -107,7 +106,6 @@ h3.orderStatement {
   margin-bottom: -20px;
   width: 90%;
 }
-
 .customerPic {
   height: 250px;
   width: auto;
@@ -205,9 +203,8 @@ h3.orderStatement {
   background-image: url("../img/syrup.jpeg");
 }
 #lemonBtn {
-  background-image: url("../img/lemon.jpeg");
+  background-image: url("../img/lemon.jpg");
 }
 #cBtn {
-  background-image: url("../img/cab.png");
->>>>>>> 1cbe2a05d5f194993204044079eb79b2ddad020e
+  background-image: url("../img2/cab.jpg");
 }
