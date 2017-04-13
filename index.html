@@ -2,13 +2,16 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="js/jquery-3.2.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/bootstrap.css" media="screen" title="no title" charset="utf-8">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
-
-    <script class "one" src="js/jquery-3.2.0.js"></script>
     <script src="js/scripts.js"></script>
-
     <link rel="shortcut icon" href="img/favicon.ico" >
+
+
 
     <title>Pebs Place</title>
   </head>
@@ -22,44 +25,71 @@
               <p>
                 How this game works:
               </p>
-
-
             </div>
+
             <div class="col-sm-4">
               <h1 id="welcome">Welcome To The Game</h1>
-              <p> The reason you're here is that we at PEBS bar can't keep putting up with you walking out on your bar tabs. We have decided that to pay us back is to work as our lead bartender. We are a full service bar so study our menu so you know how to make our signature cocktails. Goodluck!</p>
+              <p> The reason you're here is that we at PEBS bar can't keep putting up with you walking out on your bar tabs. We have decided that to pay us back you will work as our lead bartender. We are a full service bar so study our menu so you know how to make our signature cocktails. Goodluck!</p>
             </div>
+
             <div class="col-sm-4">
-              <div id="menu">
-                <div class="panel panel-default">
-                  <div class="panel-body">
-                    <p>Menu</p>
+              <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                  <div class="carousel-item active">
+                    <ul>
+                      <li><strong>Manhattan</strong></li>
+                      <li>Bourbon</li>
+                      <li>Sweet Vermouth</li>
+                      <li>Cherry</li>
+                    </ul>
 
-                    <h4>Manhattan</h4>
-                    <p>Bourbon</p>
-                    <p>Sweet Vermouth</p>
-                    <p>Cherry</p>
                   </div>
-
+                  <div class="carousel-item">
+                    <ul>
+                      <li><strong>Moscow Mule</strong></li>
+                      <li>Vodka</li>
+                      <li>Ginger Beer</li>
+                      <li>Lime Juice</li>
+                    </ul>
+                  </div>
+                  <div class="carousel-item">
+                    <ul>
+                      <li><strong>Dark and Stormy</strong></li>
+                      <li>Rum</li>
+                      <li>Ginger Beer</li>
+                      <li>Lime Juice</li>
+                    </ul>
+                  </div>
+                  <div class="carousel-item">
+                    <ul>
+                      <li><strong>G and T</strong></li>
+                      <li>Gin</li>
+                      <li>Tonic</li>
+                    </ul>
+                  </div>
+                  <div class="carousel-item">
+                    <ul>
+                      <li>Wines</li>
+                      <h4>Cab</h4>
+                      <li>Bold</li>
+                      <h4>Pinot Noir</h4>
+                      <li>Light bodied</li>
+                      <h4>Chardonnay</h4>
+                      <li>Oaky</li>
+                    </ul>
+                  </div>
                 </div>
-
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
               </div>
-
             </div>
-
           </div>
-          <!-- <h1>Welcome to the game</h1>
-          <p> The reason you're here is that we at PEBS bar can't keep putting up with you walking out on your bar tabs. We have decided that to pay us back is to work as our lead bartender. We are a full service bar so study our menu so you know how to make our signature cocktails. Goodluck!</p> -->
-          <!-- <div id="menu">
-            <div class="panel panel-default">
-              <div class="panel-body">
-                <p>Menu</p>
-              </div>
-
-            </div>
-
-          </div> -->
-
           <button type="button" id="start">Get to Work!!</button>
         </div>
         <div id="upgradeHeader" class="well">
@@ -138,7 +168,6 @@
         <div class="col-sm-9 container-fluid">
           <form id="trns-form">
             <div class="row bar-pad-bg">
-
               <div class="col-sm-3 form-group primary">
                 <div>
                   <button class="btn btn-default" id="brbnBtn" type="button" value="Bourbon"><span class="textOpt">Bourbon</span></button>
@@ -213,8 +242,8 @@
               </div>
 
               <input class="form-control" id="firstSpot" type="text" placeholder="Spirit Goes Here... Yumm">
-              <input class="form-control col-sm-4" id="secondSpot" type="text" placeholder="Mix Goes Here">
-              <input class="form-control col-sm-4" id="thirdSpot" type="text" placeholder="Catchall/ Flavor/ Garnish">
+              <input class="form-control" id="secondSpot" type="text" placeholder="Mix Goes Here">
+              <input class="form-control" id="thirdSpot" type="text" placeholder="Catchall/ Flavor/ Garnish">
               <button class="btn btn-default" id="submitBtn" type="submit">Submit</button>
 
 
