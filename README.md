@@ -10,6 +10,48 @@ _This app is designed as a learning tool for bartenders and drink enthusiasts th
 
 ## Specifications
 
+Description:  Pops up avatars as options for user
+Example Input: button -Get to Work-
+Example Output: Avatar image option1, Avatar image option2, Avatar image option3, Avatar image option4, Avatar image option5
+
+Description: Takes user input to name to select and name their avatar of choice.
+Example Input: "Taylor" , Avatar Image option2, -Submit-
+Example Output: Taylor, Avatar Image option2
+
+Description: Randomly generates customer avatar and a drink order
+Example Input: button -next customer-
+Example Output: (customer image), "One G and T please"
+
+Description: Returns a victory condition upon submitting the correct ingredients that correspond to the current drink order.
+Example user Input: Gin , Tonic
+Example Output: "That hits the spot"
+
+Description: Returns a loss condition upon submitting the incorrect ingredients corresponding to the current drink order.
+Example Input: Rum, Soda
+Example Output: "disgusting"
+
+Description: Increases users bank after submitting a correct drink order.
+Example user Input: Gin , Tonic
+Example Output: bank +$10
+
+Description: decreases users bank after submitting a correct drink order.
+Example user Input: Rum , Soda
+Example Output: bank -$10
+
+Description: Records and displays an increase in happy customers upon submitting the correct drink order.
+Example Input: Gin , Tonic
+Example Output: Happy Customer +1
+
+Description: Records and displays an increase in sad customers upon submitting the incorrect drink order.
+Example user Input: Rum, Soda
+Example Output: Sad Customer +1
+
+Description: Allows user to upgrade their bar upon accumulating 100 dollars or more in their bank
+Example user Input: bank >= 100
+Example Output: Upgrade style options are available.
+
+
+
 
 
 ## Setup/Installation Requirements
