@@ -67,7 +67,6 @@ else if (this.tempReqHold==="Cabernet"){
 
 
 
-
 Game.prototype.reqLib = function () {
 
   if(this.req === "Manhattan") {
@@ -288,7 +287,9 @@ $("#playerInfoForm").submit(function(event) {
     newGame.spot3 = reqTest3;
     var outPut = newGame.reqLib();
     $("h3.orderStatement").text(outPut);
+
     $("#bank").text("$" + newGame.bank);
+
     $("h2.happyCount").text(newGame.happyGuest);
     $("h2.sadCount").text(newGame.sadGuest);
     $("#trns-form button").prop("disabled", true);
