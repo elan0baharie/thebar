@@ -52,37 +52,41 @@ custImage = function(param){
 
 
 var Customer = function (){
-  var requestArray= ["Manhattan", "Margarita", "Moscow Mule", "Gin Martini", "Pinot Noir", "Chardonnay", "Vodka Martini", "Gin and Tonic","Dark and Stormy", "Cabernet", "Old Fashion", "Daiquiri"];
+  var requestArray= ["Manhattan", "Margarita", "Moscow Mule", "Gin Martini", "Pinot Noir", "Chardonnay", "Vodka Martini", "Gin and Tonic","Dark and Stormy", "Cabernet", "Old Fashion", "Daiquiri", "Beer", "7 and 7"];
   this.createReq = function () {
-    var randomIndex = Math.round((Math.random() * 11));
+    var randomIndex = Math.round((Math.random() * 13));
     return requestArray[randomIndex];
   };
   this.tempReqHold="";
   this.statement= function(){
-   if(this.tempReqHold==="Manhattan"){
+    if(this.tempReqHold==="Manhattan"){
       return "Manhattan up...Please!";
-  }else if (this.tempReqHold==="Margarita"){
-    return "\"Margarita rocks and salt.\"";
-  }else if (this.tempReqHold==="Moscow Mule"){
-    return " \"I need a Moscow Mule. You have the copper mugs right?\"";
-  }else if (this.tempReqHold==="Gin Martini"){
-    return " \"Gin Martini and don't bruise it.\"";
-  }else if (this.tempReqHold==="Pinot Noir"){
-    return "\"Do you have a light bodied red wine?\"";
-  }else if (this.tempReqHold==="Chardonnay"){
-    return "\"Can I get a white wine that is bold and buttery?\"";
-  }else if (this.tempReqHold==="Vodka Martini"){
-    return "\"Vodka Martini please. Shaken not stirred.\"";
-  }else if (this.tempReqHold==="Gin and Tonic"){
-    return "\"One G and T please.\"";
-}else if (this.tempReqHold==="Dark and Stormy"){
-  return "\"Please one Dark and Stormy.\"";
-}else if (this.tempReqHold==="Cabernet"){
-  return "\"Get me the boldest red wine you have.\"";
-}else if (this.tempReqHold==="Old Fashion"){
-  return "\"Do you know how to make an Old Fashion?\"";
-}else if (this.tempReqHold==="Daiquiri"){
-  return "\"I see a little sun. Get me a Daiquiri.\"";
+    } else if (this.tempReqHold==="Margarita"){
+      return "\"Margarita rocks and salt.\"";
+    } else if (this.tempReqHold==="Moscow Mule"){
+      return " \"I need a Moscow Mule. You have the copper mugs right?\"";
+    } else if (this.tempReqHold==="Gin Martini"){
+      return " \"Gin Martini and don't bruise it.\"";
+    } else if (this.tempReqHold==="Pinot Noir"){
+      return "\"Do you have a light bodied red wine?\"";
+    } else if (this.tempReqHold==="Chardonnay"){
+      return "\"Can I get a white wine that is bold and buttery?\"";
+    } else if (this.tempReqHold==="Vodka Martini"){
+      return "\"Vodka Martini please. Shaken not stirred.\"";
+    } else if (this.tempReqHold==="Gin and Tonic"){
+      return "\"One G and T please.\"";
+    } else if (this.tempReqHold==="Dark and Stormy"){
+    return "\"Please one Dark and Stormy.\"";
+    } else if (this.tempReqHold==="Cabernet"){
+    return "\"Get me the boldest red wine you have.\"";
+    } else if (this.tempReqHold==="Old Fashion"){
+    return "\"Do you know how to make an Old Fashion?\"";
+    } else if (this.tempReqHold==="Daiquiri"){
+    return "\"I see a little sun. Get me a Daiquiri.\"";
+    } else if (this.tempReqHold==="Beer"){
+    return "\"I need a beer.\"";
+    } else if (this.tempReqHold==="7 and 7"){
+      return "\"7 and 7. Light ice.\"";
 }
 }
 }
@@ -257,6 +261,41 @@ Game.prototype.reqLib = function () {
         this.happyGuest= this.happyGuest+1;
         return "\"It's like I'm on the islands.\"";
       }
+  }//End of Daiquiri Test
+  else if (this.req === "Beer") {
+    if(this.spot3 !== "Beer") {
+      this.bank = this.bank - 10;
+      this.sadGuest= this.sadGuest+1;
+      return "\"Get me some water instead\"";
+    } else if(this.spot2 !== "" && this.spot3 === "Beer") {
+      this.bank = this.bank - 10;
+      this.sadGuest= this.sadGuest+1;
+      return "\"Just the beer. Like a glass with some beer.\"";
+    } else if(this.spot1 === "" && this.spot2 === "" && this.spot3 === "Beer") {
+      this.wOrL = "Victory";
+      this.bank = this.bank + 10;
+      this.happyGuest= this.happyGuest+1;
+
+      return"\"Thanks Mucho!\"";
+    } else if(this.spot1 === "Bourbon" && this.spot2 === "" && this.spot3 === "Beer") {
+      this.wOrL = "Victory";
+      this.bank = this.bank + 15;
+      this.happyGuest= this.happyGuest+1;
+
+      return"\"Beer and a shot!? That's whats up!\"";
+    }
+  }//End of Beer Test
+  else if (this.req === "7 and 7") {
+    if((this.spot3 !== "Soda" && this.spot1 === "Bourbon") || (this.spot3 === "Soda" && this.spot1 !== "Bourbon")) {
+      this.bank = this.bank - 10;
+      this.sadGuest= this.sadGuest+1;
+      return"\"How does someone screw up a Whiskey and Seven?\"";
+    } else if(this.spot1 === "Bourbon" && this.spot2 === "" && this.spot3 === "Soda") {
+      this.wOrL = "Victory";
+      this.bank = this.bank + 10;
+      this.happyGuest= this.happyGuest+1;
+      return "\"That hits the spot\"";
+    }
   }
 
 
