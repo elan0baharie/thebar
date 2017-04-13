@@ -21,8 +21,9 @@ var Game = function (req) {
       return}
   }
   this.detectBank = function () {
+
     var bnkDtct = this.bank;
-    if(bnkDtct >= 10) {
+    if(bnkDtct >= 10 && this.upgrade === false) {
       $("#trigger").show();
       alert("You are now eligible for our bar upgrade. It'll cost $100. Push the upgrade button at the bottom of the game if you like!");
     } else {
