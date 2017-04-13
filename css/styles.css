@@ -13,6 +13,10 @@ ul {
   font-size: 25px;
   list-style: none;
 }
+.wines {
+  font-size: 18px;
+  font-style: italic;
+}
 .mainGame, .back {
   display: none;
 }
