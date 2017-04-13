@@ -24,9 +24,9 @@ var Game = function (req) {
   this.detectBank = function () {
     var bnkDtct = this.bank;
 
-    if(bnkDtct >= 100) {
-
-      alert("You are now eligible for our bar upgrade");
+    if(bnkDtct >= 10) {
+      $("#trigger").show();
+      alert("You are now eligible for our bar upgrade. It'll cost $100. Push the upgrade button at the bottom of the game if you like!");
     } else {
       return;
     }
@@ -38,18 +38,14 @@ var Game = function (req) {
 
 
 custImage = function(param){
- var order = Math.round(Math.random() * 12);
+ var order = Math.round((Math.random() * 12)+1);
+ console.log(order);
+  if (param.upgrade === false){
  $(".customerPic").attr("src", ("img/legoorder" + order + ".png"));
+} else {
+  $(".customerPic").attr("src", ("img2/order" + order + ".png"));
 }
-
-// function newbar(){
-//   if (this.bank >= 3) {
-//     $("script").prepend('<link href="css/styles2.css" rel="stylesheet" type="text/css">');
-//   }
-// }
-
-
-
+}
 
 var Customer = function (){
   var requestArray= ["Manhattan", "Margarita", "Moscow Mule", "Gin Martini", "Pinot Noir", "Chardonnay", "Vodka Martini", "Gin and Tonic","Dark and Stormy", "Cabernet", "Old Fashion", "Daiquiri", "Beer", "7 and 7"];
@@ -299,13 +295,6 @@ Game.prototype.reqLib = function () {
   }
 
 
-
-
-
-
-
-
-
 }//End of Request Library Test Function
 
 //B.L.
@@ -313,19 +302,7 @@ Game.prototype.reqLib = function () {
 $(document).ready(function() {
   var newGame = new Game();
   var newCustomer = new Customer();
-  // Activate Carousel
-    $("#myCarousel").carousel();
 
-    // Enable Carousel Indicators
-    $(".item").click(function(){
-        $("#myCarousel").carousel(1);
-    });
-
-    // Enable Carousel Controls
-    $(".left").click(function(event){
-        event.preventDefault();
-        $("#myCarousel").carousel("prev");
-    });
 //Spirit Buttons
   $(".primary button").click(function(event){
     event.preventDefault();
@@ -355,7 +332,6 @@ $(document).ready(function() {
 $("#start").click(function(event){
   event.preventDefault();
   $(".playerInput").show();
-  // $("script").prepend('<link href="css/styles2.css" rel="stylesheet" type="text/css">')
 });
 //Player info submit
 
@@ -370,6 +346,7 @@ $("#playerInfoForm").submit(function(event) {
   var playerNameInput = $("#playerNameInput").val();
   $(".playerName").text(playerNameInput);
   $("." + avatarInput).show();
+  $("#trns-form button").prop("disabled", true);
   console.log(avatarInput);
 });
 
@@ -399,7 +376,7 @@ $("#playerInfoForm").submit(function(event) {
   $("#guestBtn").click(function(event) {
     event.preventDefault();
     newGame.req = "";
-    custImage();
+    custImage(newGame);
     $("#firstSpot").val("");
     $("#secondSpot").val("");
     $("#thirdSpot").val("");
@@ -433,11 +410,22 @@ $("#playerInfoForm").submit(function(event) {
     event.preventDefault();
     newGame.upgrade = true;
     newGame.bank = newGame.bank - 100;
+    $("#bank").text("$" + newGame.bank);
     $(".welcomeStory").show();
     $(".playerUpgrade").show();
     $("#upgradeHeader").show();
     $("script").prepend('<link href="css/styles2.css" rel="stylesheet" type="text/css">')
     $(".bottombar").attr("src", ("img2/silverbar.jpg"));
+    $("#trigger").hide();
   });
-
+  $(".menuButton").click(function(event){
+    event.preventDefault();
+    $(".menuButton").hide();
+    $(".menu").show();
+  });
+  $(".rulesButton").click(function(event){
+    event.preventDefault();
+    $(".rulesButton").hide();
+    $(".rulesFull").show();
+  });
 });// Doc Ready

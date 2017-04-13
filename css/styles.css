@@ -1,23 +1,65 @@
-#welcome {
-
-  font-family: fantasy;
-  font-size: 30px;
-  text-shadow: 2px,2px,2px;
+body {
+  background-color: #d6d6d6;
+  margin: 0;
+  width: 100%;
+  height: 100%;
 }
-h4{
+.container {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+#welcome {
+  font-family: fantasy;
+  font-size: 40px;
+  text-shadow: 2px,2px,2px;
+  text-decoration: underline;
+  font-weight: bold;
+}
+.ourStory p {
+  font-size: 30px;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  padding-right: 2%;
+  padding-left: 2%;
+}
+.rulesFull, .menu {
+  display: none;
+}
+.rulesButton button, .menuButton button {
+  border: 2px solid gray;
+  margin: 20%;
+}
+.carousel-control-next{
+  background-color: gray;
+}
+.carousel-control-prev {
+  background-color: gray;
+}
+.menu {
+  margin-top: 3%;
+  text-align: center;
+}
+.avatarDisplay h4, .mainGame h4{
   color: white;
   text-align: center;
   text-decoration: underline;
   font-family: sans-serif;
 }
-body {
-  margin: 0;
-  width: 100%;
-  height: 100%;
+#start {
+  border: 2px solid gray;
 }
+#trigger {
+  display: none;
+}
+
 ul {
   font-size: 25px;
   list-style: none;
+}
+.wines {
+  font-size: 18px;
+  font-style: italic;
 }
 .mainGame, .back {
   display: none;
@@ -27,27 +69,24 @@ ul {
   opacity: 0.8;
   margin-top: 30%;
 }
-.container {
-  margin: 0;
-  width: 100%;
-  height: 100%;
+#playerNameInput {
+  border: 2px solid black;
 }
+
 .welcomeStory {
   background-image: url("../img/legobar.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 900px;
+  min-height: 1100px;
   width: 100%;
 }
 #header1 {
   opacity: 0.7;
   text-align: center;
 }
-
 .header2 {
     display: none;
     text-align: center;
-
     background: brown; /* For browsers that do not support gradients */
     background: -webkit-radial-gradient(brown, black, grey); /* Safari 5.1 to 6.0 */
     background: -o-radial-gradient(brown, black, grey); /* For Opera 11.6 to 12.0 */
@@ -55,12 +94,10 @@ ul {
     background: radial-gradient(brown, black, grey); /* Standard syntax */
     padding-top: 20px;
     color: white;
-
 }
 .header2 h1 {
   font-family: fantasy;
   margin-top: 0px;
-
 }
 .header2 p {
   font-style: italic;
