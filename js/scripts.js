@@ -93,7 +93,6 @@ var Customer = function (){
 
 
 
-
 Game.prototype.reqLib = function () {
 
   if(this.req === "Manhattan") {
@@ -349,7 +348,9 @@ $("#playerInfoForm").submit(function(event) {
     newGame.upgradeTest();
     newGame.detectBank();
     $("h3.orderStatement").text(outPut);
+
     $("#bank").text("$" + newGame.bank);
+
     $("h2.happyCount").text(newGame.happyGuest);
     $("h2.sadCount").text(newGame.sadGuest);
     $("#trns-form button").prop("disabled", true);
