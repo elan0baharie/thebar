@@ -15,7 +15,7 @@ var Game = function (req) {
 
 
 custImage = function(param){
- var order = Math.floor(Math.random() * 12) + 1;
+ var order = Math.round(Math.random() * 12);
  $(".customerPic").attr("src", ("img/legoorder" + order + ".png"));
 }
 
@@ -29,9 +29,9 @@ custImage = function(param){
 
 
 var Customer = function (){
-  var requestArray= ["Manhattan", "Margarita", "Moscow Mule", "Gin Martini", "Pinot Noir", "Chardonnay", "Vodka Martini", "Gin and Tonic","Dark and Stormy", "Cabernet"];
+  var requestArray= ["Manhattan", "Margarita", "Moscow Mule", "Gin Martini", "Pinot Noir", "Chardonnay", "Vodka Martini", "Gin and Tonic","Dark and Stormy", "Cabernet", "Old Fashion", "Daiquiri"];
   this.createReq = function () {
-    var randomIndex = Math.round((Math.random() * 9));
+    var randomIndex = Math.round((Math.random() * 11));
     return requestArray[randomIndex];
   };
   this.tempReqHold="";
@@ -54,9 +54,12 @@ var Customer = function (){
     return "\"One G and T please.\"";
 }else if (this.tempReqHold==="Dark and Stormy"){
   return "\"Please one Dark and Stormy.\"";
-}
-else if (this.tempReqHold==="Cabernet"){
+}else if (this.tempReqHold==="Cabernet"){
   return "\"Get me the boldest red wine you have.\"";
+}else if (this.tempReqHold==="Old Fashion"){
+  return "\"Do you know how to make an Old Fashion?\"";
+}else if (this.tempReqHold==="Daiquiri"){
+  return "\"I see a little sun. Get me a Daiquiri.\"";
 }
 }
 }
@@ -173,7 +176,7 @@ Game.prototype.reqLib = function () {
       return"\"Perfect!\"";
     }
   }//End of Chardonnay Test
-  if(this.req === "Dark and Stormy") {
+  else if(this.req === "Dark and Stormy") {
 
     if(this.spot1 !== "Rum" || this.spot2 !== "Ginger Beer" || this.spot3 !== "Lime Juice") {
       this.bank= this.bank-10;
@@ -200,7 +203,35 @@ Game.prototype.reqLib = function () {
 
       return"\"Bold and Red. Exactly what I wanted\"";
     }
+  }//End of Chardonnay Test
+  else if(this.req === "Old Fashion") {
+
+    if(this.spot1 !== "Bourbon" || this.spot2 !== "Simple Syrup" || this.spot3 !== "Cherry") {
+      this.bank= this.bank-10;
+      this.sadGuest=this.sadGuest +1;
+
+      return "\"Horrible.You probably like pinneaple on your pizza too.\"";
+    } else if (this.spot1 === "Bourbon" && this.spot2 === "Simple Syrup" && this.spot3 === "Cherry") {
+      this.bank = this.bank + 10;
+      this.happyGuest= this.happyGuest+1;
+      return "\"Nice. Just like my papa used to make.\"";
+    }
+    else if(this.req === "Daiquiri") {
+
+      if(this.spot1 !== "Rum" || this.spot2 !== "Simple Syrup" || this.spot3 !== "Lemon") {
+        this.bank= this.bank-10;
+        this.sadGuest=this.sadGuest +1;
+
+        return "\"Jimmy Buffet would be ashamed of you\"";
+      } else if (this.spot1 === "Rum" && this.spot2 === "Simple Syrup" && this.spot3 === "Lemon") {
+        this.bank = this.bank + 10;
+        this.happyGuest= this.happyGuest+1;
+        return "\"It's like im on the islands.\"";
+      }
+      }
   }
+
+
 
 
 

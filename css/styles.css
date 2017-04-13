@@ -4,6 +4,12 @@
   font-size: 30px;
   text-shadow: 2px,2px,2px;
 }
+h4{
+  color: white;
+  text-align: center;
+  text-decoration: underline;
+  font-family: sans-serif;
+}
 body {
   margin: 0;
   width: 100%;
