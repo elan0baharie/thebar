@@ -21,7 +21,7 @@ custImage = function(param){
 
 // function newbar(){
 //   if (this.bank >= 3) {
-//   return $("script").prepend('<link href="css/styles2.css" rel="stylesheet" type="text/css">');
+//     $("script").prepend('<link href="css/styles2.css" rel="stylesheet" type="text/css">');
 //   }
 // }
 
@@ -216,7 +216,19 @@ Game.prototype.reqLib = function () {
 $(document).ready(function() {
   var newGame = new Game();
   var newCustomer = new Customer();
+  // Activate Carousel
+    $("#myCarousel").carousel();
 
+    // Enable Carousel Indicators
+    $(".item").click(function(){
+        $("#myCarousel").carousel(1);
+    });
+
+    // Enable Carousel Controls
+    $(".left").click(function(event){
+        event.preventDefault();
+        $("#myCarousel").carousel("prev");
+    });
 //Spirit Buttons
   $(".primary button").click(function(event){
     event.preventDefault();
