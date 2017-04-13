@@ -56,6 +56,7 @@ Example Output: Upgrade style options are available.
 
 ## Setup/Installation Requirements
 
+* _Play at https://elan0baharie.github.io/thebar/ _
 * _Clone this repository to your desktop._
 * _Open the index.html in the browser of your choice._
 
