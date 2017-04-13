@@ -1,7 +1,33 @@
 #welcome {
   font-family: fantasy;
-  font-size: 30px;
+  font-size: 40px;
   text-shadow: 2px,2px,2px;
+  text-decoration: underline;
+  font-weight: bold;
+}
+.ourStory p {
+  font-size: 30px;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  padding-right: 2%;
+  padding-left: 2%;
+}
+.rulesFull, .menu {
+  display: none;
+}
+.rulesButton button, .menuButton button {
+  border: 2px solid gray;
+  margin: 20%;
+}
+.carousel-control-next{
+  background-color: gray;
+}
+.carousel-control-prev {
+  background-color: gray;
+}
+.menu {
+  margin-top: 3%;
+  text-align: center;
 }
 h4{
   color: white;
@@ -43,7 +69,7 @@ ul {
   background-image: url("../img/legobar.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 900px;
+  min-height: 1100px;
   width: 100%;
 }
 #header1 {

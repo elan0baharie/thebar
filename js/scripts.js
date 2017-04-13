@@ -293,7 +293,6 @@ $(document).ready(function() {
 $("#start").click(function(event){
   event.preventDefault();
   $(".playerInput").show();
-  // $("script").prepend('<link href="css/styles2.css" rel="stylesheet" type="text/css">')
 });
 //Player info submit
 
@@ -378,6 +377,16 @@ $("#playerInfoForm").submit(function(event) {
     $("#upgradeHeader").show();
     $("script").prepend('<link href="css/styles2.css" rel="stylesheet" type="text/css">')
     $(".bottombar").attr("src", ("img2/silverbar.jpg"));
+    $("#trigger").hide();
   });
-
+  $(".menuButton").click(function(event){
+    event.preventDefault();
+    $(".menuButton").hide();
+    $(".menu").show();
+  });
+  $(".rulesButton").click(function(event){
+    event.preventDefault();
+    $(".rulesButton").hide();
+    $(".rulesFull").show();
+  });
 });// Doc Ready
