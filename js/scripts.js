@@ -6,10 +6,33 @@ var Game = function (req) {
   this.spot1 = "";
   this.spot2 = "";
   this.spot3 = "";
+  this.wOrL = "";
+  this.upgrade = false;
   this.bank = -7;
   this.happyGuest=0;
   this.sadGuest=0;
+  this.upgradeTest = function () {
+    if(this.wOrL === "Victory") {
+      if(this.upgrade === true) {
+      this.bank = this.bank + 2;
+      this.wOrL === "";
+    }
 
+    } else {
+      return}
+  }
+  this.detectBank = function () {
+    var bnkDtct = this.bank;
+
+    if(bnkDtct >= 100) {
+
+      alert("You are now eligible for our bar upgrade");
+    } else {
+      return;
+    }
+
+
+  }
 };
 
 
@@ -83,7 +106,7 @@ Game.prototype.reqLib = function () {
     } else if (this.spot1 === "Bourbon" && this.spot2 === "Sweet Vermouth" && this.spot3 === "Cherry") {
       this.bank = this.bank + 10;
       this.happyGuest= this.happyGuest+1;
-      console.log("Victory Condition");
+      this.wOrL = "Victory";
       return "\"What an awesome Manhattan!\"";
     }
   }//End of Manhattan Test
@@ -93,7 +116,7 @@ Game.prototype.reqLib = function () {
       this.sadGuest= this.sadGuest+1;
       return "\"Learn how to bartend!\"";
     } else if (this.spot1 === "Tequila" && this.spot2 === "Triple Sec" && this.spot3 === "Lime Juice") {
-      console.log("Victory Condition");
+      this.wOrL = "Victory";
       this.bank = this.bank + 10;
       this.happyGuest= this.happyGuest+1;
       return"\"Good Job.\"";
@@ -116,7 +139,7 @@ Game.prototype.reqLib = function () {
       this.sadGuest= this.sadGuest+1;
       return "\"Disgusting!\"";
     } else if (this.spot1 === "Gin" && this.spot2 === "Dry Vermouth" && this.spot3 === "Twist") {
-    console.log("Victory Condition");
+    this.wOrL = "Victory";
     this.bank = this.bank + 10;
     this.happyGuest= this.happyGuest+1;
       return"\" MMMMMMMMM!\"";
@@ -128,7 +151,7 @@ Game.prototype.reqLib = function () {
       this.sadGuest= this.sadGuest+1;
       return "\"Horrible.\"";
     } else if (this.spot1 === "Vodka" && this.spot2 === "Dry Vermouth" && this.spot3 === "Twist") {
-    console.log("Victory Condition");
+    this.wOrL = "Victory";
     this.bank = this.bank + 10;
     this.happyGuest= this.happyGuest+1;
       return"\"Just like James Bond... Awesome!\"";
@@ -144,6 +167,7 @@ Game.prototype.reqLib = function () {
       this.sadGuest= this.sadGuest+1;
       return "\"Just the wine by itself please.\"";
     } else if(this.spot1 === "" && this.spot2 === "" && this.spot3 === "Pinot Noir") {
+      this.wOrL = "Victory";
       this.bank = this.bank + 10;
       this.happyGuest= this.happyGuest+1;
       return"\"That's it\"";
@@ -155,6 +179,7 @@ Game.prototype.reqLib = function () {
       this.sadGuest= this.sadGuest+1;
       return"\"How does someone screw up a Gin and Tonic\"";
     } else if(this.spot1 === "Gin" && this.spot2 === "" && this.spot3 === "Tonic") {
+      this.wOrL = "Victory";
       this.bank = this.bank + 10;
       this.happyGuest= this.happyGuest+1;
       return "\"That hits the spot\"";
@@ -170,6 +195,7 @@ Game.prototype.reqLib = function () {
       this.sadGuest= this.sadGuest+1;
       return "\"Not exactly it\"";
     } else if(this.spot1 === "" && this.spot2 === "" && this.spot3 === "Chardonnay") {
+      this.wOrL = "Victory";
       this.bank = this.bank + 10;
       this.happyGuest= this.happyGuest+1;
 
@@ -184,6 +210,7 @@ Game.prototype.reqLib = function () {
 
       return "\"Yuck. I would call this Off the Mark & Stormy!\"";
     } else if (this.spot1 === "Rum" && this.spot2 === "Ginger Beer" && this.spot3 === "Lime Juice") {
+      this.wOrL = "Victory";
       this.bank = this.bank + 10;
       this.happyGuest= this.happyGuest+1;
       return "\"Wow that is refreshing\"";
@@ -198,6 +225,7 @@ Game.prototype.reqLib = function () {
       this.sadGuest= this.sadGuest+1;
       return "\"Not exactly it\"";
     } else if(this.spot1 === "" && this.spot2 === "" && this.spot3 === "Cabernet") {
+      this.wOrL = "Victory";
       this.bank = this.bank + 10;
       this.happyGuest= this.happyGuest+1;
 
@@ -212,25 +240,25 @@ Game.prototype.reqLib = function () {
 
       return "\"Horrible.You probably like pinneaple on your pizza too.\"";
     } else if (this.spot1 === "Bourbon" && this.spot2 === "Simple Syrup" && this.spot3 === "Cherry") {
+      this.wOrL = "Victory";
       this.bank = this.bank + 10;
       this.happyGuest= this.happyGuest+1;
       return "\"Nice. Just like my papa used to make.\"";
     }
-    else if(this.req === "Daiquiri") {
+  }
+  else if (this.req === "Daiquiri") {
+    if(this.spot1 !== "Rum" || this.spot2 !== "Simple Syrup" || this.spot3 !== "Lemon") {
+      this.bank= this.bank-10;
+      this.sadGuest=this.sadGuest +1;
 
-      if(this.spot1 !== "Rum" || this.spot2 !== "Simple Syrup" || this.spot3 !== "Lemon") {
-        this.bank= this.bank-10;
-        this.sadGuest=this.sadGuest +1;
-
-        return "\"Jimmy Buffet would be ashamed of you\"";
+      return "\"Jimmy Buffet would be ashamed of you\"";
       } else if (this.spot1 === "Rum" && this.spot2 === "Simple Syrup" && this.spot3 === "Lemon") {
+        this.wOrL = "Victory";
         this.bank = this.bank + 10;
         this.happyGuest= this.happyGuest+1;
-        return "\"It's like im on the islands.\"";
-      }
+        return "\"It's like I'm on the islands.\"";
       }
   }
-
 
 
 
@@ -318,6 +346,8 @@ $("#playerInfoForm").submit(function(event) {
     newGame.spot2 = reqTest2;
     newGame.spot3 = reqTest3;
     var outPut = newGame.reqLib();
+    newGame.upgradeTest();
+    newGame.detectBank();
     $("h3.orderStatement").text(outPut);
     $("#bank").text("$" + newGame.bank);
     $("h2.happyCount").text(newGame.happyGuest);
@@ -361,7 +391,8 @@ $("#playerInfoForm").submit(function(event) {
   });
   $("#trigger").click(function(event){
     event.preventDefault();
-
+    newGame.upgrade = true;
+    newGame.bank = newGame.bank - 100;
     $(".welcomeStory").show();
     $(".playerUpgrade").show();
     $("#upgradeHeader").show();
