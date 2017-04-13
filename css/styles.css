@@ -40,19 +40,9 @@ body {
   margin-top: 3%;
   text-align: center;
 }
-.avatarDisplay h4, .mainGame h4{
-  color: white;
-  text-align: center;
-  text-decoration: underline;
-  font-family: sans-serif;
-}
 #start {
   border: 2px solid gray;
 }
-#trigger {
-  display: none;
-}
-
 ul {
   font-size: 25px;
   list-style: none;
@@ -72,7 +62,6 @@ ul {
 #playerNameInput {
   border: 2px solid black;
 }
-
 .welcomeStory {
   background-image: url("../img/legobar.jpg");
   background-size: cover;
@@ -108,6 +97,7 @@ ul {
 .playerUpgrade {
   display: none;
 }
+
 /*Player form*/
 input:checked ~ img{
   border: 5px solid gray;
@@ -126,6 +116,12 @@ input[type="radio"]:checked {
 }
 
 /*Player display*/
+.avatarDisplay h4, .mainGame h4{
+  color: white;
+  text-align: center;
+  text-decoration: underline;
+  font-family: sans-serif;
+}
 .avatarDisplay {
   float: right;
   text-align: center;
@@ -147,6 +143,9 @@ input[type="radio"]:checked {
   margin: auto;
   margin-top: 8px;
   background-color: white;
+}
+#trigger {
+  display: none;
 }
 
 /*Customer order area*/
@@ -208,8 +207,6 @@ h3.orderStatement {
 #submitBtn {
   clear: both;
 }
-
-/*Game buttons*/
 .bar-pad-bg button {
   border: 3px solid #996600;
   background-size: cover;
@@ -217,6 +214,8 @@ h3.orderStatement {
   width: 100%;
   border-radius: 3px;
 }
+
+/*Game buttons*/
 #brbnBtn {
   background-image: url("../img/brbn.jpg");
 }
